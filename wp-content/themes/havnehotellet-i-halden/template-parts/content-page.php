@@ -4,30 +4,26 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since 1.0.0
+ * @package Havnehotellet_i_Halden
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( ! twentynineteen_can_show_post_thumbnail() ) : ?>
 	<header class="entry-header">
-		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
-	</header>
-	<?php endif; ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header><!-- .entry-header -->
+
+	<?php havnehotellet_i_halden_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 		the_content();
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'twentynineteen' ),
-				'after'  => '</div>',
-			)
-		);
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'havnehotellet-i-halden' ),
+			'after'  => '</div>',
+		) );
 		?>
 	</div><!-- .entry-content -->
 
@@ -38,7 +34,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'twentynineteen' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'havnehotellet-i-halden' ),
 						array(
 							'span' => array(
 								'class' => array(),

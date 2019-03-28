@@ -4,10 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
+ * @package Havnehotellet_i_Halden
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -15,6 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'twentyseventeen' ); ?>">
+<aside id="secondary" class="widget-area">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->
