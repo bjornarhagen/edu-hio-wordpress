@@ -16,6 +16,63 @@ if ( ! function_exists( 'havnehotellet_i_halden_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function havnehotellet_i_halden_setup() {
+		remove_action('wp_head', 'wp_generator');
+		remove_action('wp_head', 'wlwmanifest_link');
+
+		// Removes embed.min.js
+		function hih_dequeue_scripts() {
+			wp_deregister_script('wp-embed');
+		}
+		add_action('wp_enqueue_scripts', 'hih_dequeue_scripts');
+
+		/**
+		 * Disable the emoji's
+		 */
+		function disable_emojis() {
+			remove_action('wp_head', 'print_emoji_detection_script', 7);
+			remove_action('admin_print_scripts', 'print_emoji_detection_script');
+			remove_action('wp_print_styles', 'print_emoji_styles');
+			remove_action('admin_print_styles', 'print_emoji_styles');
+			remove_filter('the_content_feed', 'wp_staticize_emoji');
+			remove_filter('comment_text_rss', 'wp_staticize_emoji');
+			remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+			add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
+			add_filter('wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2);
+		}
+		add_action('init', 'disable_emojis');
+
+		/**
+		 * Filter function used to remove the tinymce emoji plugin.
+		 *
+		 * @param array $plugins
+		 * @return array Difference betwen the two arrays
+		 */
+		function disable_emojis_tinymce($plugins) {
+			if (is_array($plugins)) {
+				return array_diff($plugins, array('wpemoji'));
+			} else {
+				return array();
+			}
+		}
+
+		/**
+		 * Remove emoji CDN hostname from DNS prefetching hints.
+		 *
+		 * @param array $urls URLs to print for resource hints.
+		 * @param string $relation_type The relation type the URLs are printed for.
+		 * @return array Difference betwen the two arrays.
+		 */
+		function disable_emojis_remove_dns_prefetch($urls, $relation_type) {
+			if ('dns-prefetch' == $relation_type) {
+				/** This filter is documented in wp-includes/formatting.php */
+				$emoji_svg_url = apply_filters('emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/');
+
+				$urls = array_diff($urls, array($emoji_svg_url));
+			}
+
+			return $urls;
+		}
+
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -113,6 +170,10 @@ function havnehotellet_i_halden_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	// Remove the styling for ".recentcomments a" in head
+	global $wp_widget_factory;
+	remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
 }
 add_action( 'widgets_init', 'havnehotellet_i_halden_widgets_init' );
 
