@@ -56,3 +56,19 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<?php
+			while ( have_posts() ) :
+				the_post();
+
+				$header_heading = get_field('header_heading');
+				$header_text = get_field('header_text');
+
+				// Get regular page title as fallback
+				if (empty($header_heading) && is_singular()):
+					$header_heading = get_the_title();
+				endif;
+
+				echo '<h1 class="entry-title">' . $header_heading . '</h1>';
+				echo '<p>' . $header_text . '</p>';
+			endwhile; // End of the loop.
+		?>
