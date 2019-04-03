@@ -46,6 +46,6 @@
 			) );
 			?>
 		</div><!-- .entry-content -->
-		<a href="#">Les mer</a>
+		<a href="#" class="button">Les mer</a>
 	</section>
 </article><!-- #post-<?php the_ID(); ?> -->
