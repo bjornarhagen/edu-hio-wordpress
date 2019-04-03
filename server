@@ -1,0 +1,2 @@
+<?php
+exec('php -S havnehotellet-i-halden.local:80');
