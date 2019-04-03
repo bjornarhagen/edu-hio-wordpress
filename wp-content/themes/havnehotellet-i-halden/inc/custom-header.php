@@ -18,10 +18,10 @@
  */
 function havnehotellet_i_halden_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'havnehotellet_i_halden_custom_header_args', array(
-		'default-image'          => '',
+		'default-image'          => get_stylesheet_directory_uri() . '/images/havnehotellet-i-halden.jpg',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 1920,
+		'height'                 => 600,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'havnehotellet_i_halden_header_style',
 	) ) );
@@ -36,13 +36,22 @@ if ( ! function_exists( 'havnehotellet_i_halden_header_style' ) ) :
 	 */
 	function havnehotellet_i_halden_header_style() {
 		$header_text_color = get_header_textcolor();
+		$header_image = get_header_image();
 
 		/*
-		 * If no custom options for text are set, let's bail.
-		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
-		 */
+		* If no custom options for text are set, let's bail.
+		* get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+		*/
 		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			return;
+		}
+
+		/*
+		* Setting default-image in havnehotellet_i_halden_custom_header_setup doesn't seem to work, but this does does the trick.
+		* The default-image does make it show as a suggested image, so we'll keep it there.
+		*/
+		if ( $header_image === false ) {
+			$header_image = get_stylesheet_directory_uri() . '/images/havnehotellet-i-halden.jpg';
 		}
 
 		// If we get this far, we have custom styles. Let's do this.
@@ -52,8 +61,8 @@ if ( ! function_exists( 'havnehotellet_i_halden_header_style' ) ) :
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 			?>
-			.site-title,
-			.site-description {
+			.page-title,
+			.page-description {
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
 			}
@@ -61,9 +70,13 @@ if ( ! function_exists( 'havnehotellet_i_halden_header_style' ) ) :
 		// If the user has set a custom color for the text use that.
 		else :
 			?>
-			.site-title a,
-			.site-description {
+			.page-title,
+			.page-description {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
+			}
+
+			.page-header {
+				background-image: url(<?php echo esc_attr( $header_image ); ?>);
 			}
 		<?php endif; ?>
 		</style>

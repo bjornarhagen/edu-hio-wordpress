@@ -15,12 +15,24 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'havnehotellet-i-halden' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'havnehotellet-i-halden' ), 'WordPress' );
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-footer-primary',
+				'menu_id'        => 'menu-footer-primary',
+			) );
+			?>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-footer-secondary',
+				'menu_id'        => 'menu-footer-secondary',
+			) );
+			?>
+			<?php
+			$havnehotellet_i_halden_description = get_bloginfo( 'description', 'display' );
+			if ( $havnehotellet_i_halden_description || is_customize_preview() ) :
 				?>
-			</a>
+				<p><?php echo $havnehotellet_i_halden_description; /* WPCS: xss ok. */ ?></p>
+			<?php endif; ?>
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
