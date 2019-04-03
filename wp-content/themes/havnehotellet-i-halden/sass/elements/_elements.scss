@@ -30,4 +30,21 @@ figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
+button,
+.button {
+	color: $dark;
+	background-color: $primary;
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 4px;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&:visited {
+		color: $dark;
+	}
+}
+
 @import "tables";
