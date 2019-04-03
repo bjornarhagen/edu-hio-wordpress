@@ -16,6 +16,18 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-footer-primary',
+				'menu_id'        => 'menu-footer-primary',
+			) );
+			?>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-footer-secondary',
+				'menu_id'        => 'menu-footer-secondary',
+			) );
+			?>
+			<?php
 			$havnehotellet_i_halden_description = get_bloginfo( 'description', 'display' );
 			if ( $havnehotellet_i_halden_description || is_customize_preview() ) :
 				?>

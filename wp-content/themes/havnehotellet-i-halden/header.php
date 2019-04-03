@@ -44,12 +44,12 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'havnehotellet-i-halden' ); ?></button>
+		<nav id="site-navigation" class="site-navigation">
+			<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php esc_html_e( 'Meny', 'havnehotellet-i-halden' ); ?></button>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
+				'theme_location' => 'menu-primary',
+				'menu_id'        => 'menu-primary',
 			) );
 			?>
 		</nav><!-- #site-navigation -->
