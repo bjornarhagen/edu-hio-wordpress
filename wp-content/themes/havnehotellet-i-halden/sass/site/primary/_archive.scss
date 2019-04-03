@@ -1,0 +1,18 @@
+.entry {
+	&-title {
+		a {
+			text-decoration: none;
+			color: $dark;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	&-content {
+		&-wrapper {
+			
+		}
+	}
+}
