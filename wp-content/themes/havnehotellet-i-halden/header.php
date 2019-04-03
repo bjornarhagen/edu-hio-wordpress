@@ -37,11 +37,7 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$havnehotellet_i_halden_description = get_bloginfo( 'description', 'display' );
-			if ( $havnehotellet_i_halden_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $havnehotellet_i_halden_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="site-navigation">
@@ -67,8 +63,11 @@
 				if (empty($header_heading) && is_singular()):
 					$header_heading = get_the_title();
 				endif;
-
-				echo '<h1 class="entry-title">' . $header_heading . '</h1>';
-				echo '<p>' . $header_text . '</p>';
+			?>
+			<header class="page-header">
+				<h1 class="page-title entry-title"><?= $header_heading ?></h1>
+				<p class="page-description"><?= $header_text ?></p>
+			</header>
+			<?php
 			endwhile; // End of the loop.
 		?>
