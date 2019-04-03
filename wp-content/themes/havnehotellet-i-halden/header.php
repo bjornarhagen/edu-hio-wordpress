@@ -37,19 +37,15 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$havnehotellet_i_halden_description = get_bloginfo( 'description', 'display' );
-			if ( $havnehotellet_i_halden_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $havnehotellet_i_halden_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'havnehotellet-i-halden' ); ?></button>
+		<nav id="site-navigation" class="site-navigation">
+			<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php esc_html_e( 'Meny', 'havnehotellet-i-halden' ); ?></button>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
+				'theme_location' => 'menu-primary',
+				'menu_id'        => 'menu-primary',
 			) );
 			?>
 		</nav><!-- #site-navigation -->
@@ -67,8 +63,11 @@
 				if (empty($header_heading) && is_singular()):
 					$header_heading = get_the_title();
 				endif;
-
-				echo '<h1 class="entry-title">' . $header_heading . '</h1>';
-				echo '<p>' . $header_text . '</p>';
+			?>
+			<header class="page-header">
+				<h1 class="page-title entry-title"><?= $header_heading ?></h1>
+				<p class="page-description"><?= $header_text ?></p>
+			</header>
+			<?php
 			endwhile; // End of the loop.
 		?>
