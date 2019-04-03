@@ -9,20 +9,17 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		
+<article class="archive-content" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<header class="entry-header">
+			<?php
+				if ( is_singular() ) :
+					the_title( '<h1 class="entry-title">', '</h1>' );
+				else :
+					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				endif;
 			?>
-	</header><!-- .entry-header -->
+		</header><!-- .entry-header -->
 
-	<section class="entry-content-wrapper">
 		<?php havnehotellet_i_halden_post_thumbnail(); ?>
 
 		<div class="entry-content">
@@ -47,5 +44,4 @@
 			?>
 		</div><!-- .entry-content -->
 		<a href="#" class="button">Les mer</a>
-	</section>
 </article><!-- #post-<?php the_ID(); ?> -->
