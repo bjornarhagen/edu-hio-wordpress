@@ -22,6 +22,7 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
+			<section class="archive-content-wrapper">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -35,6 +36,10 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
+			?>
+			</section>
+			
+			<?php
 
 			the_posts_navigation();
 			
