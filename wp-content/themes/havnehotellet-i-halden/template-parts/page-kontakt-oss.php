@@ -8,7 +8,7 @@
   <!-- Hente header -->
 <?php get_header(); ?>
  
-    <main id="main-kontakt-oss" class="site-main" role="main">     
+    <main id="main-kontakt-oss" class="site-main">     
         
         <!-- Hente innholdet -->
         <?php the_content(); ?>  
