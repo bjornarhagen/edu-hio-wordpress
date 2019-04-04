@@ -101,7 +101,9 @@ if ( ! function_exists( 'havnehotellet_i_halden_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'havnehotellet-i-halden' ),
+			'menu-primary' => esc_html__( 'Hovedmeny', 'havnehotellet-i-halden' ),
+			'menu-footer-primary' => esc_html__( 'Footer meny - hoved', 'havnehotellet-i-halden' ),
+			'menu-footer-secondary' => esc_html__( 'Footer meny - sekundær', 'havnehotellet-i-halden' )
 		) );
 
 		/*

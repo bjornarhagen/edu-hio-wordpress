@@ -1,107 +1,99 @@
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
+.site-branding {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
+  .custom-logo-link {
+    width: 128px;
+  }
+}
 
-			ul {
-				left: -999em;
-				top: 0;
-			}
+.site-navigation {
+  flex-grow: 3;
+  flex-direction: row;
+  display: flex;
 
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
+  .menu-hovedmeny-container {
+    flex-grow: 1;
+  }
 
-			a {
-				width: 200px;
-			}
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: white;
+    padding: 0;
+    list-style: none;
+    margin: 0;
 
-			:hover > a,
-			.focus > a {
-			}
+    @media screen and (min-width: 37.5em) {
+      display: flex;
+      flex-direction: row;
+      background-color: transparent;
+    }
+  }
 
-			a:hover,
-			a.focus {
-			}
-		}
+  &.toggled .nav-menu {
+    display: flex;
+    position: absolute;
+    top: 8rem;
+    right: 0;
+    left: 0;
+    width: 100%;
+  }
 
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
+  .nav-menu .menu-item {
+    margin-left: 1em;
+  }
 
-	li {
-		float: left;
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
+  //   .current_page_item > a,
+  //   .current-menu-item > a,
+  //   .current_page_ancestor > a,
+  //   .current-menu-ancestor > a {
+  //   }
 }
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.site-navigation.toggled ul {
+  display: block;
 }
 
 @media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+  .menu-toggle {
+    display: none;
+  }
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+  .site-main & {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+  }
 
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
+  .nav-previous {
+    float: left;
+    width: 50%;
+  }
 
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
+  .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+  }
 }
