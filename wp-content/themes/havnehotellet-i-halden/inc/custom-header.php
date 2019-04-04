@@ -25,6 +25,8 @@ function havnehotellet_i_halden_custom_header_setup() {
 		'flex-height'            => true,
 		'wp-head-callback'       => 'havnehotellet_i_halden_header_style',
 	) ) );
+
+	require(__DIR__ . '/custom-header-fields.php');
 }
 add_action( 'after_setup_theme', 'havnehotellet_i_halden_custom_header_setup' );
 
@@ -43,7 +45,7 @@ if ( ! function_exists( 'havnehotellet_i_halden_header_style' ) ) :
 		* get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
 		*/
 		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-			return;
+			$header_text_color = false;
 		}
 
 		/*
@@ -57,29 +59,21 @@ if ( ! function_exists( 'havnehotellet_i_halden_header_style' ) ) :
 		// If we get this far, we have custom styles. Let's do this.
 		?>
 		<style type="text/css">
-		<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-			?>
-			.page-title,
-			.page-description {
-				position: absolute;
-				clip: rect(1px, 1px, 1px, 1px);
-			}
-		<?php
-		// If the user has set a custom color for the text use that.
-		else :
-			?>
-			.page-title,
-			.page-description {
-				color: #<?php echo esc_attr( $header_text_color ); ?>;
+			.page-header {
+				background-image: url(<?= esc_attr( $header_image ); ?>);
 			}
 
-			.page-header {
-				background-image: url(<?php echo esc_attr( $header_image ); ?>);
+			<?php if ( $header_text_color !== false ) : ?>
+			.page-title,
+			.page-description {
+				color: #<?= esc_attr( $header_text_color ); ?>;
 			}
-		<?php endif; ?>
+			<?php endif; ?>
 		</style>
 		<?php
 	}
 endif;
+
+
+
+
