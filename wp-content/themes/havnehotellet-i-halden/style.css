@@ -567,8 +567,6 @@ img {
 figure {
   margin: 1em 0;
   /* Extra wide images within figure tags don't overflow the content area. */
-<<<<<<< HEAD
-=======
 }
 
 button,
@@ -588,7 +586,6 @@ button:hover,
 button:visited,
 .button:visited {
   color: #000;
->>>>>>> line
 }
 
 table {
@@ -717,7 +714,6 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 
-<<<<<<< HEAD
 .site-header {
   position: -webkit-sticky;
   position: sticky;
@@ -781,68 +777,12 @@ a:active {
 
 .site-navigation .nav-menu .menu-item {
   margin-left: 1em;
-=======
-.main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
-}
-
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 100%;
-  left: -999em;
-  z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-
-.main-navigation ul ul a {
-  width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
-}
-
-.main-navigation li {
-  float: left;
-  position: relative;
-}
-
-.main-navigation a {
-  display: block;
-  text-decoration: none;
->>>>>>> line
 }
 
 /* Small menu. */
 
 .menu-toggle,
-<<<<<<< HEAD
 .site-navigation.toggled ul {
-=======
-.main-navigation.toggled ul {
->>>>>>> line
   display: block;
 }
 
@@ -850,13 +790,6 @@ a:active {
   .menu-toggle {
     display: none;
   }
-<<<<<<< HEAD
-=======
-
-  .main-navigation ul {
-    display: block;
-  }
->>>>>>> line
 }
 
 .site-main .comment-navigation,
@@ -1042,21 +975,6 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-<<<<<<< HEAD
-## Header
---------------------------------------------------------------*/
-
-.page-header {
-  background-position: center;
-  background-size: cover;
-  padding: 1em;
-}
-
-.page-header .page-title {
-  margin: 0;
-  font-size: 3.5em;
-  max-width: 30rem;
-=======
 ## Archive
 --------------------------------------------------------------*/
 
@@ -1106,7 +1024,38 @@ a:active {
   .content-area .site-main article:nth-child(even) {
     margin-top: 18em;
   }
->>>>>>> line
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+
+.page-header {
+  background-position: center;
+  background-size: cover;
+  padding: 1em;
+}
+
+.page-header .page-title {
+  margin: 0;
+  font-size: 3.5em;
+  max-width: 30rem;
+}
+
+/*--------------------------------------------------------------
+## Kontakt oss
+--------------------------------------------------------------*/
+
+#main-kontakt-oss {
+  background-color: aqua;
+}
+
+/*--------------------------------------------------------------
+## Restaurant
+--------------------------------------------------------------*/
+
+#main-restaurant {
+  background-color: red;
 }
 
 /*--------------------------------------------------------------
