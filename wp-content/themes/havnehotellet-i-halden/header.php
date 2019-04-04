@@ -63,11 +63,17 @@
 				if (empty($header_heading) && is_singular()):
 					$header_heading = get_the_title();
 				endif;
+<<<<<<< HEAD
 			?>
 			<header class="page-header">
 				<h1 class="page-title entry-title"><?= $header_heading ?></h1>
 				<p class="page-description"><?= $header_text ?></p>
 			</header>
 			<?php
+=======
+
+				echo '<h1 class="entry-title">' . $header_heading . '</h1>';
+				echo '<p>' . $header_text . '</p>';
+>>>>>>> line
 			endwhile; // End of the loop.
 		?>

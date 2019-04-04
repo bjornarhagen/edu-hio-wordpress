@@ -1,0 +1,52 @@
+.content-area {
+	width: 100%;
+	max-width: 768px;
+	margin: 0 auto;
+
+	@media screen and (min-width: 1366px) {
+		max-width: 1000px;
+	}
+	
+	.site-main {
+	    display: flex;
+	    justify-content: space-between;
+	    align-content: flex-start;
+	    flex-wrap: wrap;
+	    align-items: flex-start;
+
+	    	.archive-content {
+	    		display: flex;
+	    		flex-direction: column;
+	    		align-items: flex-start;
+	    		@media screen and (min-width: 1024px) {
+	    			justify-content: center;
+	    			max-width: 40%;
+	    			
+	    		}
+	    	}
+
+	    	.entry {
+	    		&-title {
+	    			a {
+	    				text-decoration: none;
+	    				color: $dark;
+
+	    				&:hover {
+	    					color: $primary;
+	    				}
+	    			}
+	    		}
+	    	}
+
+
+	    	@media screen and (min-width: 1024px) {
+	    		article {
+	    			&:nth-child(even) {
+	    				margin-top: 18em;
+	    			}
+	    		}
+	    	}	
+	    }
+
+	}
+	
