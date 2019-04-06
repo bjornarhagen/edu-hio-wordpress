@@ -37,26 +37,39 @@
     		}
     	}
 
-    	.entry {
-    		&-title {
-    			margin: 0;
-    			
-    			a {
-    				text-decoration: none;
-    				color: $dark;
+    .entry-header {
+    	width: 100%;
+    	display: flex;
+    	justify-content: space-between;
+    	padding: 15px 0;
 
-    				&:hover {
-    					color: $primary;
-    				}
-    			}
-    		}
+    	.entry-title {
+    		margin: 0;
     		
-    		&-content {
-    			margin: 0;
-    			width: 100%;
+    		a {
+    			text-decoration: none;
+    			color: $dark;
+
+    			&:hover {
+    				color: $primary;
+    			}
     		}
     	}
 
+    	.room-price {
+    		font-weight: bold;
+    		margin: 0;
+    		display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    	}
+    }
+
+	
+	.entry-content {
+		margin: 0;
+		width: 100%;
+	}
 
     	@media screen and (min-width: 1024px) {
     		article {
@@ -65,12 +78,6 @@
     			}
     		}
     	}	
-    }
-
-    .room-price {
-    	display: flex;
-    	justify-content: flex-end;
-    	font-weight: bold;
     }
 
 	.roomFacilities {
