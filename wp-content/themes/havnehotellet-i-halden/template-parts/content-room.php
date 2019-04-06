@@ -10,6 +10,9 @@
 ?>
 
 <article class="archive-content" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+	<?php havnehotellet_i_halden_post_thumbnail(); ?>
+	
 	<header class="entry-header">
 		<?php
 			if ( is_singular() ) :
