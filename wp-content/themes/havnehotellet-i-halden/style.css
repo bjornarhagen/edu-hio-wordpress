@@ -688,17 +688,17 @@ textarea {
 --------------------------------------------------------------*/
 
 a {
-  color: royalblue;
+  color: #000;
 }
 
 a:visited {
-  color: purple;
+  color: #000;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: midnightblue;
+  color: #AE9731;
 }
 
 a:focus {
@@ -978,6 +978,10 @@ a:active {
 ## Archive
 --------------------------------------------------------------*/
 
+.site-main {
+  padding: 0 15px;
+}
+
 .content-area {
   width: 100%;
   max-width: 768px;
@@ -1002,6 +1006,7 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 50px 0;
 }
 
 .content-area .archive-content-wrapper .archive-content .post-thumbnail img {
@@ -1016,7 +1021,7 @@ a:active {
 }
 
 .content-area .archive-content-wrapper .entry-title {
-  margin-top: 0;
+  margin: 0;
 }
 
 .content-area .archive-content-wrapper .entry-title a {
@@ -1028,10 +1033,58 @@ a:active {
   color: #AE9731;
 }
 
+.content-area .archive-content-wrapper .entry-content {
+  margin: 0;
+  width: 100%;
+}
+
 @media screen and (min-width: 1024px) {
   .content-area .archive-content-wrapper article:nth-child(even) {
     margin-top: 18em;
   }
+}
+
+.content-area .room-price {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+
+.content-area .roomFacilities {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.content-area .roomFacilities li {
+  list-style: none;
+}
+
+.content-area .roomFacilities #facilityChecked {
+  border: 1px solid #CCCCCC;
+  color: #AE9731;
+  padding: 1px 4px;
+  margin-right: 5px;
+}
+
+.content-area .room-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-area .room-btns a:hover {
+  color: black;
+}
+
+.content-area .room-btns .button-secondary {
+  background-color: #000;
+  color: white;
+}
+
+.content-area .room-btns .button-secondary:hover {
+  color: #CCCCCC;
 }
 
 /*--------------------------------------------------------------
