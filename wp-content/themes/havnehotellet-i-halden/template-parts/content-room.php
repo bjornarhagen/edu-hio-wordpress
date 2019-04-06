@@ -20,8 +20,28 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php havnehotellet_i_halden_post_thumbnail(); ?>
+	<div class="entry-content">
+			 <?php
 
+			 $price = get_field('room-price');
+			 if($price) {
+			 	echo '<p class="room-price">NOK ' . $price . ',-</p>';
+			 }
+
+			 $facilities = get_field('room-facilities');
+			 if($facilities) {
+			 	echo '<ul class="roomFacilities">';
+
+			 	foreach($facilities as $value) {
+			 		echo '<li><span id="facilityChecked">&times;</span>'. $value . '</li>';
+			 	}
+
+			 	echo '</ul>';
+			 }
+
+			 ?>
+
+		
 	<div class="entry-content">
 		<?php
 		the_content( sprintf(
