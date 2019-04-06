@@ -22,7 +22,7 @@
 			endif;
 		?>
 	</header><!-- .entry-header -->
-
+	
 	<div class="entry-content">
 			 <?php
 
@@ -45,7 +45,6 @@
 			 ?>
 
 		
-	<div class="entry-content">
 		<?php
 		the_content( sprintf(
 			wp_kses(
@@ -53,7 +52,7 @@
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'havnehotellet-i-halden' ),
 				array(
 					'span' => array(
-						'class' => array(),
+					'class' => array(),
 					),
 				)
 			),
@@ -68,6 +67,6 @@
 	</div><!-- .entry-content -->
 	<section class="room-btns">
 		<a href="#" class="button">Les mer</a>
-		<a href="#" class="button button-primary">Book nå</a>
+		<a href="#" class="button button-secondary">Book nå</a>
 	</section>
 </article><!-- #post-<?php the_ID(); ?> -->
