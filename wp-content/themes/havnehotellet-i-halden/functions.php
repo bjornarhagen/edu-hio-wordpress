@@ -302,6 +302,12 @@ function havnehotellet_i_halden_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'havnehotellet_i_halden_scripts' );
 
+// Fjern utskriften til les mer-linker
+function modify_read_more_link() {
+    return null;
+}
+add_filter( 'the_content_more_link', 'modify_read_more_link' );
+
 /**
  * Implement the Custom Header feature.
  */
