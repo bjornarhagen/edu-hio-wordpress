@@ -66,7 +66,7 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-	<section>
+	<section class="room-btns">
 		<a href="#" class="button">Les mer</a>
 		<a href="#" class="button">Book nå</a>
 	</section>
