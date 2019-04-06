@@ -73,7 +73,15 @@
 		?>
 	</div><!-- .entry-content -->
 	<section class="room-btns">
-		<a href="#" class="button">Les mer</a>
+		<?php 
+		$classes = get_body_class();
+		
+		if (!in_array('single-room',$classes)) {
+			echo '<a href="'.esc_url( get_permalink() ).'" class="button">Les mer</a>';
+		}
+
+		?>
+		
 		<a href="#" class="button button-secondary">Book nå</a>
 	</section>
 </article><!-- #post-<?php the_ID(); ?> -->
