@@ -31,28 +31,19 @@
 	</header><!-- .entry-header -->
 	
 	<div class="entry-content">
-			 <?php
-
-			 $price = get_field('room-price');
-			 if($price) {
-			 	echo '<p class="room-price">NOK ' . $price . ',-</p>';
-			 }
-
-			 $facilities = get_field('room-facilities');
-			 if($facilities) {
-			 	echo '<ul class="roomFacilities">';
-
-			 	foreach($facilities as $value) {
-			 		echo '<li><span id="facilityChecked">&times;</span>'. $value . '</li>';
-			 	}
-
-			 	echo '</ul>';
-			 }
-
-			 ?>
-
-		
 		<?php
+		
+		$facilities = get_field('room-facilities');
+		if($facilities) {
+			echo '<ul class="roomFacilities">';
+
+			foreach($facilities as $value) {
+				echo '<li><span id="facilityChecked">&times;</span>'. $value . '</li>';
+			}
+
+			echo '</ul>';
+		}
+
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
@@ -65,7 +56,6 @@
 			),
 			get_the_title()
 		) );
-
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'havnehotellet-i-halden' ),
 			'after'  => '</div>',
