@@ -1,3 +1,7 @@
+.site-main {
+	padding: 0 15px;
+}
+
 .content-area {
 	width: 100%;
 	max-width: 768px;
@@ -14,50 +18,100 @@
 	    flex-wrap: wrap;
 	    align-items: flex-start;
 
+    	.archive-content {
+    		display: flex;
+    		flex-direction: column;
+    		align-items: flex-start;
+    		padding: 50px 0;
+
+    		.post-thumbnail {
+    			img {
+    				box-shadow: 10px 10px 8px -10px $shade-dark;
+    			}
+    		}
+    		
+    		@media screen and (min-width: 1024px) {
+    			justify-content: center;
+    			max-width: 40%;
+    			
+    		}
+    	}
+
+    	.entry {
+    		&-title {
+    			margin: 0;
+    			
+    			a {
+    				text-decoration: none;
+    				color: $dark;
+
+    				&:hover {
+    					color: $primary;
+    				}
+    			}
+    		}
+    		
+    		&-content {
+    			margin: 0;
+    			width: 100%;
+    		}
+    	}
 
 
-	    	.archive-content {
-	    		display: flex;
-	    		flex-direction: column;
-	    		align-items: flex-start;
+    	@media screen and (min-width: 1024px) {
+    		article {
+    			&:nth-child(even) {
+    				margin-top: 18em;
+    			}
+    		}
+    	}	
+    }
 
-	    		.post-thumbnail {
-	    			img {
-	    				box-shadow: 10px 10px 8px -10px $shade-dark;
-	    			}
-	    		}
-	    		
-	    		@media screen and (min-width: 1024px) {
-	    			justify-content: center;
-	    			max-width: 40%;
-	    			
-	    		}
-	    	}
+    .room-price {
+    	display: flex;
+    	justify-content: flex-end;
+    	font-weight: bold;
+    }
 
-	    	.entry {
-	    		&-title {
-	    			margin-top: 0;
-	    			
-	    			a {
-	    				text-decoration: none;
-	    				color: $dark;
+	.roomFacilities {
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		padding: 0;
 
-	    				&:hover {
-	    					color: $primary;
-	    				}
-	    			}
-	    		}
-	    	}
+		li {
+			list-style: none;
+		}
 
-
-	    	@media screen and (min-width: 1024px) {
-	    		article {
-	    			&:nth-child(even) {
-	    				margin-top: 18em;
-	    			}
-	    		}
-	    	}	
-	    }
+		#facilityChecked {
+			border: 1px solid $shade-light;
+			color: $primary;
+			padding: 1px 4px;
+			margin-right: 5px;
+		}
 
 	}
-	
+
+	.room-btns {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		a {
+			&:hover {
+				color: black;
+			}
+		}
+
+		.button-secondary {
+			background-color: $dark;
+			color: white;
+
+			&:hover {
+				color: $shade-light;
+			}
+		}
+	}
+}
+
+
