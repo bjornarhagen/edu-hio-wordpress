@@ -20,6 +20,13 @@
 			else :
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
+
+			$price = get_field('room-price');
+			if($price) {
+				echo '<p class="room-price">NOK ' . $price . ',-</p>';
+			}
+
+			
 		?>
 	</header><!-- .entry-header -->
 	
