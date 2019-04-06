@@ -68,6 +68,6 @@
 	</div><!-- .entry-content -->
 	<section class="room-btns">
 		<a href="#" class="button">Les mer</a>
-		<a href="#" class="button">Book nå</a>
+		<a href="#" class="button button-primary">Book nå</a>
 	</section>
 </article><!-- #post-<?php the_ID(); ?> -->
