@@ -84,6 +84,8 @@
 					else:
 						get_template_part( 'template-parts/header', get_post_type() );
 					endif;
+				else:
+					get_template_part( 'template-parts/header', 'none' );
 				endif;
 			endwhile; // End of the loop.
 		?>

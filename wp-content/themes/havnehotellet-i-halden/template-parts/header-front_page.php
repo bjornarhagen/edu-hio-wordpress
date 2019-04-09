@@ -1,4 +1,6 @@
 <header class="page-header" style="background-image: url('<?= $header_image ?>')">
+  <div id="page-navigation-padding"></div>
+
   <h1 class="page-title entry-title"><?= $header_heading ?></h1>
   <p class="page-description"><?= $header_text ?></p>
 
@@ -29,8 +31,8 @@
     $regex_years .= ')';
   ?>
 
-  <section>
-    <form action="" method="get">
+  <section id="booking-form-wrapper">
+    <form id="booking-form" action="" method="get">
       <div class="form-group form-group-line form-group-label-icon">
         <label for="">
           <span>Innsjekk dato</span>
