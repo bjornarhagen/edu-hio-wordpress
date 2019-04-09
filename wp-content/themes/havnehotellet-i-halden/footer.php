@@ -36,7 +36,7 @@
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'havnehotellet-i-halden' ), 'havnehotellet-i-halden', '<a href="http://underscores.me/">Underscores.me</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'havnehotellet-i-halden' ), 'havnehotellet-i-halden', '<a href="https://itstud.hiof.no/~bjornarh/,%20https://itstud.hiof.no/~bereketa/,%20https://itstud.hiof.no/~linesaa/">Bjørnar H., Bereket G.A., Line Sharina A.H.</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
