@@ -1047,7 +1047,13 @@ a:active {
 --------------------------------------------------------------*/
 
 #main-kontakt-oss {
-  background-color: aqua;
+  display: flex;
+  background-color: snow;
+  margin: 0 auto;
+}
+
+#main-kontakt-oss iframe {
+  max-width: 50%;
 }
 
 /*--------------------------------------------------------------
@@ -1056,6 +1062,19 @@ a:active {
 
 #main-restaurant {
   background-color: red;
+  margin: 0 auto;
+}
+
+#main-restaurant .havnekroa-opening-time-block {
+  background-color: azure;
+}
+
+#main-restaurant .havnekroa-linker-block {
+  background-color: aliceblue;
+}
+
+#main-restaurant .bilde-galleri {
+  max-width: 100%;
 }
 
 /*--------------------------------------------------------------
