@@ -9,8 +9,24 @@
     // 01-12
     $regex_months = '0*([1-9]|1[0-2])';
 
-    // 2019-2029
-    $regex_years = '([2]{1}[0]{1}[1]{1}[9]{1})|([2]{1}[0]{1}[2]{1}[0-9]{1})';
+    // Min = this year
+    // Max = next year
+    $min_year = date('Y');
+    $max_year = (string) ((int) date('Y') + 1);
+
+    // Generate regex for min and max year
+    // Example output (2019-2020): ([2]{1}[0]{1}[1]{1}[9]{1})|([2]{1}[0]{1}[2]{1}[0]{1})
+    $regex_years = '(';
+    for ($i=0; $i < strlen($min_year); $i++) {
+      $regex_years .= '[' . $min_year[$i] . ']{1}';
+    }
+
+    $regex_years .= ')|(';
+
+    for ($i=0; $i < strlen($max_year); $i++) {
+      $regex_years .= '[' . $max_year[$i] . ']{1}';
+    }
+    $regex_years .= ')';
   ?>
 
   <section>
