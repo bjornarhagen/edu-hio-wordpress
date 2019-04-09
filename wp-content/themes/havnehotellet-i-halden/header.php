@@ -65,8 +65,17 @@
 					$header_heading = get_the_title();
 				endif;
 
+
+				$header_image = get_stylesheet_directory_uri() . '/images/havnehotellet-i-halden.jpg';
+
+				if (has_post_thumbnail( get_the_ID() ) ):
+					$thumbnail_id = get_post_thumbnail_id( get_the_ID() );
+					$header_image = wp_get_attachment_image_src($thumbnail_id, 'single-post-thumbnail');
+					$header_image = $header_image[0];
+				endif;
+
 				if (!empty($header_display)): ?>
-					<header class="page-header">
+					<header class="page-header" style="background-image: url('<?= $header_image ?>')">
 						<h1 class="page-title entry-title"><?= $header_heading ?></h1>
 						<p class="page-description"><?= $header_text ?></p>
 					</header>

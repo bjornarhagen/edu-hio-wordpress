@@ -309,9 +309,9 @@ function modify_read_more_link() {
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
 
 /**
- * Implement the Custom Header feature.
+ * Get the custom header ACF fields.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header-fields.php';
 
 /**
  * Custom template tags for this theme.
