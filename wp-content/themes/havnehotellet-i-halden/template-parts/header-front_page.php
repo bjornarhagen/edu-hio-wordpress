@@ -35,7 +35,7 @@
     <form id="booking-form" action="" method="get">
       <div class="form-group form-group-line">
         <label for="">
-          <?= get_icon('room') ?>
+          <?= get_icon('calendar') ?>
           <span>Innsjekk dato</span>
         </label>
         <div class="input input-date">
@@ -49,7 +49,7 @@
 
       <div class="form-group form-group-line">
         <label for="">
-          <?= get_icon('room') ?>
+          <?= get_icon('calendar') ?>
           <span>Utsjekk dato</span>
         </label>
         <div class="input input-date">
@@ -61,7 +61,7 @@
 
       <div class="form-group form-group-line">
         <label for="">
-          <?= get_icon('facility') ?>
+          <?= get_icon('people') ?>
           <span>Antall personer</span>
         </label>
         <div class="input input-select">
