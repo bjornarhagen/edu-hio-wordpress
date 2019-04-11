@@ -13,21 +13,20 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
-textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+textarea, select {
+	color: $shade-darkest;
+	border: 1px solid $shade-light;
+	border-radius: 4px;
+	padding: 0.2em 0.4em;
 
-	&:focus {
-		color: $color__text-input-focus;
+	&:focus,
+	&:hover {
+		color: $shade-darkest;
+		border-color: $shade-dark;
 	}
-}
-
-select {
-	border: 1px solid $color__border-input;
 }
 
 textarea {
 	width: 100%;
+	resize: vertical;
 }
