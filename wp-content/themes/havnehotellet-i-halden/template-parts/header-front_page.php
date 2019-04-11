@@ -33,11 +33,12 @@
 
   <section id="booking-form-wrapper">
     <form id="booking-form" action="" method="get">
-      <div class="form-group form-group-line form-group-label-icon">
+      <div class="form-group form-group-line">
         <label for="">
+          <?= get_icon('room') ?>
           <span>Innsjekk dato</span>
         </label>
-        <div class="inputs">
+        <div class="input input-date">
           <input type="text" name="check_in_day" placeholder="Dag" required maxlength="2" pattern="<?= $regex_days ?>">
           <input type="text" name="check_in_month" placeholder="Måned" required maxlength="2" pattern="<?= $regex_months ?>">
           <input type="text" name="check_in_year" placeholder="År" required value="<?= date('Y') ?>" maxlength="4" pattern="<?= $regex_years ?>">
@@ -46,19 +47,21 @@
 
       <span>-</span>
 
-      <div class="form-group form-group-line form-group-label-icon">
+      <div class="form-group form-group-line">
         <label for="">
+          <?= get_icon('room') ?>
           <span>Utsjekk dato</span>
         </label>
-        <div class="inputs">
+        <div class="input input-date">
           <input type="text" name="check_out_day" placeholder="Dag" required maxlength="2" pattern="<?= $regex_days ?>">
           <input type="text" name="check_out_month" placeholder="Måned" required maxlength="2" pattern="<?= $regex_months ?>">
           <input type="text" name="check_out_year" placeholder="År" required value="<?= date('Y') ?>" maxlength="4" pattern="<?= $regex_years ?>">
         </div>
       </div>
 
-      <div class="form-group form-group-line form-group-label-icon">
+      <div class="form-group form-group-line">
         <label for="">
+          <?= get_icon('facility') ?>
           <span>Antall personer</span>
         </label>
         <div class="input input-select">
@@ -73,7 +76,7 @@
 
       <div class="form-group form-group-submit">
         <div class="input">
-          <button type="submit">Finn rom</button>
+          <button type="submit" class="button-secondary">Finn rom</button>
         </div>
       </div>
     </form>
