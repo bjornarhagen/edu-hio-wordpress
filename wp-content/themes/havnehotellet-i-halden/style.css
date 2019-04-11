@@ -1044,7 +1044,7 @@ a:active {
 }
 
 @media screen and (min-width: 1024px) {
-  .content-area .archive-content-wrapper article:nth-child(odd) {
+  .content-area .archive-content-wrapper:first-child {
     margin-top: 100px;
   }
 }
