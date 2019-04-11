@@ -18,6 +18,14 @@
 	    flex-wrap: wrap;
 	    align-items: flex-start;
 
+	    @media screen and (min-width: 1024px) {
+	    	article {
+	    		&:nth-child(odd) {
+	    			margin-top: 100px;
+	    		}
+	    	}
+	    }
+
     	.archive-content {
     		display: flex;
     		flex-direction: column;
@@ -33,7 +41,7 @@
     		@media screen and (min-width: 1024px) {
     			justify-content: center;
     			max-width: 40%;
-    			
+    			padding: 0;
     		}
     	}
 
@@ -74,7 +82,7 @@
     	@media screen and (min-width: 1024px) {
     		article {
     			&:nth-child(even) {
-    				margin-top: 18em;
+    				margin-top: 14em;
     			}
     		}
     	}	

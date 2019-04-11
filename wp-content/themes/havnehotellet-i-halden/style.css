@@ -1003,6 +1003,12 @@ a:active {
   align-items: flex-start;
 }
 
+@media screen and (min-width: 1024px) {
+  .content-area .archive-content-wrapper article:nth-child(odd) {
+    margin-top: 100px;
+  }
+}
+
 .content-area .archive-content-wrapper .archive-content {
   display: flex;
   flex-direction: column;
@@ -1018,6 +1024,7 @@ a:active {
   .content-area .archive-content-wrapper .archive-content {
     justify-content: center;
     max-width: 40%;
+    padding: 0;
   }
 }
 
@@ -1056,7 +1063,7 @@ a:active {
 
 @media screen and (min-width: 1024px) {
   .content-area .archive-content-wrapper article:nth-child(even) {
-    margin-top: 18em;
+    margin-top: 14em;
   }
 }
 
