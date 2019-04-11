@@ -8,13 +8,12 @@
   <!-- Hente header -->
 <?php get_header(); ?>
     
-    <main id="main-restaurant" class="site-main" >
+    <main id="main-restaurant" class="site-main" role="main">
        
         <!-- Henter innholdet  -->
         <?php the_content(); ?>
 
     </main>
-
 </div>
   <!-- Henter footer -->
 <?php get_footer(); ?>

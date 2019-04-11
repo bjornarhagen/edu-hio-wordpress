@@ -1,3 +1,7 @@
+.site-main {
+	padding: 0 15px;
+}
+
 .content-area {
 	width: 100%;
 	max-width: 768px;
@@ -7,46 +11,114 @@
 		max-width: 1000px;
 	}
 	
-	.site-main {
+	.archive-content-wrapper {
 	    display: flex;
 	    justify-content: space-between;
 	    align-content: flex-start;
 	    flex-wrap: wrap;
 	    align-items: flex-start;
 
-	    	.archive-content {
-	    		display: flex;
-	    		flex-direction: column;
-	    		align-items: flex-start;
-	    		@media screen and (min-width: 1024px) {
-	    			justify-content: center;
-	    			max-width: 40%;
-	    			
-	    		}
-	    	}
+    	.archive-content {
+    		display: flex;
+    		flex-direction: column;
+    		align-items: flex-start;
+    		padding: 50px 0;
 
-	    	.entry {
-	    		&-title {
-	    			a {
-	    				text-decoration: none;
-	    				color: $dark;
+    		.post-thumbnail {
+    			img {
+    				box-shadow: 10px 10px 8px -10px $shade-dark;
+    			}
+    		}
+    		
+    		@media screen and (min-width: 1024px) {
+    			justify-content: center;
+    			max-width: 40%;
+    			
+    		}
+    	}
 
-	    				&:hover {
-	    					color: $primary;
-	    				}
-	    			}
-	    		}
-	    	}
+    .entry-header {
+    	width: 100%;
+    	display: flex;
+    	justify-content: space-between;
+    	padding: 15px 0;
 
+    	.entry-title {
+    		margin: 0;
+    		
+    		a {
+    			text-decoration: none;
+    			color: $dark;
 
-	    	@media screen and (min-width: 1024px) {
-	    		article {
-	    			&:nth-child(even) {
-	    				margin-top: 18em;
-	    			}
-	    		}
-	    	}	
-	    }
+    			&:hover {
+    				color: $primary;
+    			}
+    		}
+    	}
+
+    	.room-price {
+    		font-weight: bold;
+    		margin: 0;
+    		display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    	}
+    }
+
+	
+	.entry-content {
+		margin: 0;
+		width: 100%;
+	}
+
+    	@media screen and (min-width: 1024px) {
+    		article {
+    			&:nth-child(even) {
+    				margin-top: 18em;
+    			}
+    		}
+    	}	
+    }
+
+	.roomFacilities {
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		padding: 0;
+
+		li {
+			list-style: none;
+		}
+
+		#facilityChecked {
+			border: 1px solid $shade-light;
+			color: $primary;
+			padding: 1px 4px;
+			margin-right: 5px;
+		}
 
 	}
-	
+
+	.room-btns {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		a {
+			&:hover {
+				color: black;
+			}
+		}
+
+		.button-secondary {
+			background-color: $dark;
+			color: white;
+
+			&:hover {
+				color: $shade-light;
+			}
+		}
+	}
+}
+
+

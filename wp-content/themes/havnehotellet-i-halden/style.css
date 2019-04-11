@@ -576,6 +576,7 @@ button,
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 4px;
+  box-shadow: 0 0.5em 1em -0.5em #CCCCCC;
 }
 
 button:hover,
@@ -688,17 +689,17 @@ textarea {
 --------------------------------------------------------------*/
 
 a {
-  color: royalblue;
+  color: #000;
 }
 
 a:visited {
-  color: purple;
+  color: #000;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: midnightblue;
+  color: #AE9731;
 }
 
 a:focus {
@@ -978,6 +979,10 @@ a:active {
 ## Archive
 --------------------------------------------------------------*/
 
+.site-main {
+  padding: 0 15px;
+}
+
 .content-area {
   width: 100%;
   max-width: 768px;
@@ -990,7 +995,7 @@ a:active {
   }
 }
 
-.content-area .site-main {
+.content-area .archive-content-wrapper {
   display: flex;
   justify-content: space-between;
   align-content: flex-start;
@@ -998,32 +1003,98 @@ a:active {
   align-items: flex-start;
 }
 
-.content-area .site-main .archive-content {
+.content-area .archive-content-wrapper .archive-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 50px 0;
+}
+
+.content-area .archive-content-wrapper .archive-content .post-thumbnail img {
+  box-shadow: 10px 10px 8px -10px #333333;
 }
 
 @media screen and (min-width: 1024px) {
-  .content-area .site-main .archive-content {
+  .content-area .archive-content-wrapper .archive-content {
     justify-content: center;
     max-width: 40%;
   }
 }
 
-.content-area .site-main .entry-title a {
+.content-area .archive-content-wrapper .entry-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.content-area .archive-content-wrapper .entry-header .entry-title {
+  margin: 0;
+}
+
+.content-area .archive-content-wrapper .entry-header .entry-title a {
   text-decoration: none;
   color: #000;
 }
 
-.content-area .site-main .entry-title a:hover {
+.content-area .archive-content-wrapper .entry-header .entry-title a:hover {
   color: #AE9731;
 }
 
+.content-area .archive-content-wrapper .entry-header .room-price {
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-area .archive-content-wrapper .entry-content {
+  margin: 0;
+  width: 100%;
+}
+
 @media screen and (min-width: 1024px) {
-  .content-area .site-main article:nth-child(even) {
+  .content-area .archive-content-wrapper article:nth-child(even) {
     margin-top: 18em;
   }
+}
+
+.content-area .roomFacilities {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.content-area .roomFacilities li {
+  list-style: none;
+}
+
+.content-area .roomFacilities #facilityChecked {
+  border: 1px solid #CCCCCC;
+  color: #AE9731;
+  padding: 1px 4px;
+  margin-right: 5px;
+}
+
+.content-area .room-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-area .room-btns a:hover {
+  color: black;
+}
+
+.content-area .room-btns .button-secondary {
+  background-color: #000;
+  color: white;
+}
+
+.content-area .room-btns .button-secondary:hover {
+  color: #CCCCCC;
 }
 
 /*--------------------------------------------------------------
@@ -1040,41 +1111,6 @@ a:active {
   margin: 0;
   font-size: 3.5em;
   max-width: 30rem;
-}
-
-/*--------------------------------------------------------------
-## Kontakt oss
---------------------------------------------------------------*/
-
-#main-kontakt-oss {
-  display: flex;
-  background-color: snow;
-  margin: 0 auto;
-}
-
-#main-kontakt-oss iframe {
-  max-width: 50%;
-}
-
-/*--------------------------------------------------------------
-## Restaurant
---------------------------------------------------------------*/
-
-#main-restaurant {
-  background-color: red;
-  margin: 0 auto;
-}
-
-#main-restaurant .havnekroa-opening-time-block {
-  background-color: azure;
-}
-
-#main-restaurant .havnekroa-linker-block {
-  background-color: aliceblue;
-}
-
-#main-restaurant .bilde-galleri {
-  max-width: 100%;
 }
 
 /*--------------------------------------------------------------

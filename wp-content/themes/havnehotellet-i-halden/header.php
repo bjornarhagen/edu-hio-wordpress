@@ -56,6 +56,7 @@
 			while ( have_posts() ) :
 				the_post();
 
+				$header_display = get_field('header_display');
 				$header_heading = get_field('header_heading');
 				$header_text = get_field('header_text');
 
@@ -64,11 +65,11 @@
 					$header_heading = get_the_title();
 				endif;
 
-			?>
-			<header class="page-header">
-				<h1 class="page-title entry-title"><?= $header_heading ?></h1>
-				<p class="page-description"><?= $header_text ?></p>
-			</header>
-			<?php
+				if (!empty($header_display)): ?>
+					<header class="page-header">
+						<h1 class="page-title entry-title"><?= $header_heading ?></h1>
+						<p class="page-description"><?= $header_text ?></p>
+					</header>
+				<?php endif;
 			endwhile; // End of the loop.
 		?>
