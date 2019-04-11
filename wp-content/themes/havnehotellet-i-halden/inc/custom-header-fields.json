@@ -1,0 +1,98 @@
+[
+    {
+        "key": "group_5c9cd7728ca80",
+        "title": "Header",
+        "fields": [
+            {
+                "key": "field_5cac87cb89217",
+                "label": "Vis \/ skjul",
+                "name": "header_display",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "Vis",
+                "ui_off_text": "Skjul"
+            },
+            {
+                "key": "field_5c9cd79ad8423",
+                "label": "Header - overskrift",
+                "name": "header_heading",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5cac87cb89217",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5c9cd7c7d8424",
+                "label": "Header - tekst",
+                "name": "header_text",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5cac87cb89217",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": 4,
+                "new_lines": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

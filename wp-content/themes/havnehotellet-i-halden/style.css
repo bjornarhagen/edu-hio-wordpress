@@ -569,26 +569,6 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 
-button,
-.button {
-  color: #000;
-  background-color: #AE9731;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
-  box-shadow: 0 0.5em 1em -0.5em #CCCCCC;
-}
-
-button:hover,
-.button:hover {
-  text-decoration: underline;
-}
-
-button:visited,
-.button:visited {
-  color: #000;
-}
-
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -601,34 +581,72 @@ table {
 button,
 input[type=button],
 input[type=reset],
-input[type=submit] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
+input[type=submit],
+.button {
+  cursor: pointer;
+  color: #f8f5e6;
+  background-color: #AE9731;
+  padding: 0.4em 0.8em;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid #AE9731;
   line-height: 1;
-  padding: 0.6em 1em 0.4em;
+  font-size: inherit;
+  transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  box-shadow: 0 0.6em 0.6em -0.4em rgba(174, 151, 49, 0.33);
 }
 
 button:hover,
+button:focus,
 input[type=button]:hover,
+input[type=button]:focus,
 input[type=reset]:hover,
-input[type=submit]:hover {
-  border-color: #ccc #bbb #aaa;
+input[type=reset]:focus,
+input[type=submit]:hover,
+input[type=submit]:focus,
+.button:hover,
+.button:focus {
+  color: #4b4115;
+  border: 2px solid #f8f5e6;
+  text-decoration: none;
+  background-color: #f8f5e6;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+button:focus,
+input[type=button]:focus,
+input[type=reset]:focus,
+input[type=submit]:focus,
+.button:focus {
+  outline: none;
 }
 
 button:active,
-button:focus,
 input[type=button]:active,
-input[type=button]:focus,
 input[type=reset]:active,
-input[type=reset]:focus,
 input[type=submit]:active,
-input[type=submit]:focus {
-  border-color: #aaa #bbb #bbb;
+.button:active {
+  transition-duration: 50ms;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.button-secondary {
+  color: #fff;
+  border-color: #000;
+  background-color: #000;
+  box-shadow: 0 0.6em 0.6em -0.4em rgba(51, 51, 51, 0.33);
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+  color: #333333;
+  border-color: #CCCCCC;
+  background-color: #CCCCCC;
+  box-shadow: 0 0.6em 0.6em -0.4em rgba(204, 204, 204, 0.33);
 }
 
 input[type=text],
@@ -646,38 +664,55 @@ input[type=time],
 input[type=datetime],
 input[type=datetime-local],
 input[type=color],
-textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 3px;
+textarea,
+select {
+  color: #000;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
 }
 
 input[type=text]:focus,
+input[type=text]:hover,
 input[type=email]:focus,
+input[type=email]:hover,
 input[type=url]:focus,
+input[type=url]:hover,
 input[type=password]:focus,
+input[type=password]:hover,
 input[type=search]:focus,
+input[type=search]:hover,
 input[type=number]:focus,
+input[type=number]:hover,
 input[type=tel]:focus,
+input[type=tel]:hover,
 input[type=range]:focus,
+input[type=range]:hover,
 input[type=date]:focus,
+input[type=date]:hover,
 input[type=month]:focus,
+input[type=month]:hover,
 input[type=week]:focus,
+input[type=week]:hover,
 input[type=time]:focus,
+input[type=time]:hover,
 input[type=datetime]:focus,
+input[type=datetime]:hover,
 input[type=datetime-local]:focus,
+input[type=datetime-local]:hover,
 input[type=color]:focus,
-textarea:focus {
-  color: #111;
-}
-
-select {
-  border: 1px solid #ccc;
+input[type=color]:hover,
+textarea:focus,
+textarea:hover,
+select:focus,
+select:hover {
+  color: #000;
+  border-color: #333333;
 }
 
 textarea {
   width: 100%;
+  resize: vertical;
 }
 
 /*--------------------------------------------------------------
@@ -716,14 +751,19 @@ a:active {
 --------------------------------------------------------------*/
 
 .site-header {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 100px;
+}
+
+#page-navigation-padding {
+  padding-top: 100px;
 }
 
 .site-branding {
@@ -1088,15 +1128,6 @@ a:active {
   color: black;
 }
 
-.content-area .room-btns .button-secondary {
-  background-color: #000;
-  color: white;
-}
-
-.content-area .room-btns .button-secondary:hover {
-  color: #CCCCCC;
-}
-
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
@@ -1104,13 +1135,131 @@ a:active {
 .page-header {
   background-position: center;
   background-size: cover;
-  padding: 1em;
+  padding: 1em 2em 2em;
+}
+
+@media screen and (min-width: 700px) {
+  .page-header {
+    padding: 2em 4em;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .page-header {
+    padding: 4em 8em;
+  }
 }
 
 .page-header .page-title {
   margin: 0;
   font-size: 3.5em;
   max-width: 30rem;
+}
+
+@media screen and (min-width: 700px) {
+  body.home .page-header {
+    padding-bottom: 0;
+  }
+}
+
+body.home .page-header #booking-form-wrapper {
+  position: relative;
+}
+
+@media screen and (min-width: 700px) {
+  body.home .page-header #booking-form-wrapper {
+    height: 4rem;
+    margin-bottom: 8rem;
+  }
+}
+
+body.home .page-header #booking-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #CCCCCC;
+  background-color: #fff;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+@media screen and (min-width: 700px) {
+  body.home .page-header #booking-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    background-color: #CCCCCC;
+    height: 8rem;
+    padding-bottom: 0;
+  }
+}
+
+body.home .page-header #booking-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 700px) {
+  body.home .page-header #booking-form .form-group {
+    margin-top: 0;
+    width: 25%;
+    padding-right: 1em;
+    justify-content: center;
+  }
+
+  body.home .page-header #booking-form .form-group:last-child {
+    padding-right: 0;
+  }
+}
+
+body.home .page-header #booking-form .form-group:first-child {
+  margin-top: 0;
+}
+
+body.home .page-header #booking-form .form-group label {
+  font-weight: 700;
+}
+
+body.home .page-header #booking-form .form-group .input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+body.home .page-header #booking-form .form-group .input-select select {
+  width: 100%;
+}
+
+body.home .page-header #booking-form .form-group .input-date input {
+  width: 33.3333333333%;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-radius: 0;
+}
+
+body.home .page-header #booking-form .form-group .input-date input:first-child {
+  border-radius: 4px 0px 0px 4px;
+  border-left-width: 1px;
+}
+
+body.home .page-header #booking-form .form-group .input-date input:last-child {
+  border-radius: 0px 4px 4px 0px;
+  border-right-width: 1px;
+}
+
+body.home .page-header #booking-form .form-group-submit input,
+body.home .page-header #booking-form .form-group-submit button {
+  width: 100%;
+}
+
+body.home .page-header #booking-form .form-group-submit input:hover,
+body.home .page-header #booking-form .form-group-submit input:focus,
+body.home .page-header #booking-form .form-group-submit button:hover,
+body.home .page-header #booking-form .form-group-submit button:focus {
+  background-color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1156,6 +1305,11 @@ object {
 
 .custom-logo-link {
   display: inline-block;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /*--------------------------------------------------------------
