@@ -91,7 +91,7 @@
 
       <div class="form-group form-group-submit">
         <div class="input">
-          <button type="submit" class="button-secondary">Finn rom</button>
+          <button type="submit">Finn rom</button>
         </div>
       </div>
     </form>
