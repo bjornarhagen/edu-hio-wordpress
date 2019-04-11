@@ -245,6 +245,36 @@ if ( ! function_exists( 'havnehotellet_i_halden_setup' ) ) :
 			register_post_type('facility', $facilities_args);
 		}
 		add_action('init', 'custom_post_type', 0);
+
+		if ( ! function_exists( 'get_icon' ) ) :
+			function get_icon(String $icon_name) : String {
+				$icon_path = get_template_directory() . '/icons/' .  $icon_name . '.svg';
+
+				// setup fallback icon
+				if (!file_exists($icon_path)) {
+					$icon_path = get_template_directory() . '/icons/icon-missing.svg';
+				}
+
+				// Create the dom document
+				$svg = new DOMDocument();
+				$svg->load($icon_path);
+
+				// Hide for screen-readers
+				$svg->documentElement->setAttribute('aria-hidden', 'true');
+
+				// Remove the title
+				$svg_title = $svg->getElementsByTagName("title")->item(0);
+				if ($svg_title != null) {
+						$svg_head = $svg_title->parentNode;
+						$svg_head->removeChild($svg_title);
+				}
+
+				$svg_html = $svg->saveXML($svg->documentElement);
+				$svg_html = preg_replace('/\s+/', ' ', $svg_html); // Remove line breaks and duplicate whitespace
+
+				return '<div class="icon">' . $svg_html . '</div>';
+			}
+		endif;
 	}
 endif;
 add_action( 'after_setup_theme', 'havnehotellet_i_halden_setup' );
