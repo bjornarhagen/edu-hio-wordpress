@@ -32,36 +32,51 @@
   ?>
 
   <section id="booking-form-wrapper">
+    <datalist id="days-list">
+      <?php for ($i=1; $i <= 31; $i++) :?>
+        <option value="<?= str_pad($i, 2, '0', STR_PAD_LEFT); ?>"></option>
+      <?php endfor; ?>
+    </datalist>
+
+    <datalist id="months-list">
+      <?php for ($i=1; $i <= 12; $i++) :?>
+        <option value="<?= str_pad($i, 2, '0', STR_PAD_LEFT); ?>"></option>
+      <?php endfor; ?>
+    </datalist>
+
+    <datalist id="years-list">
+      <option value="<?= $min_year ?>"></option>
+      <option value="<?= $max_year ?>"></option>
+    </datalist>
+
     <form id="booking-form" action="" method="get">
       <div class="form-group form-group-line">
         <label for="">
-          <?= get_icon('room') ?>
+          <?= get_icon('calendar') ?>
           <span>Innsjekk dato</span>
         </label>
         <div class="input input-date">
-          <input type="text" name="check_in_day" placeholder="Dag" required maxlength="2" pattern="<?= $regex_days ?>">
-          <input type="text" name="check_in_month" placeholder="Måned" required maxlength="2" pattern="<?= $regex_months ?>">
-          <input type="text" name="check_in_year" placeholder="År" required value="<?= date('Y') ?>" maxlength="4" pattern="<?= $regex_years ?>">
+          <input type="text" name="check_in_day" placeholder="Dag" list="days-list" required maxlength="2" pattern="<?= $regex_days ?>" autocomplete="off">
+          <input type="text" name="check_in_month" placeholder="Måned" list="months-list" required maxlength="2" pattern="<?= $regex_months ?>" autocomplete="off">
+          <input type="text" name="check_in_year" placeholder="År" list="years-list" required value="<?= date('Y') ?>" maxlength="4" pattern="<?= $regex_years ?>" autocomplete="off">
         </div>
       </div>
 
-      <span>-</span>
-
       <div class="form-group form-group-line">
         <label for="">
-          <?= get_icon('room') ?>
+          <?= get_icon('calendar') ?>
           <span>Utsjekk dato</span>
         </label>
         <div class="input input-date">
-          <input type="text" name="check_out_day" placeholder="Dag" required maxlength="2" pattern="<?= $regex_days ?>">
-          <input type="text" name="check_out_month" placeholder="Måned" required maxlength="2" pattern="<?= $regex_months ?>">
-          <input type="text" name="check_out_year" placeholder="År" required value="<?= date('Y') ?>" maxlength="4" pattern="<?= $regex_years ?>">
+          <input type="text" name="check_out_day" placeholder="Dag" list="days-list" required maxlength="2" pattern="<?= $regex_days ?>" autocomplete="off">
+          <input type="text" name="check_out_month" placeholder="Måned" list="months-list" required maxlength="2" pattern="<?= $regex_months ?>" autocomplete="off">
+          <input type="text" name="check_out_year" placeholder="År" list="years-list" required value="<?= date('Y') ?>" maxlength="4" pattern="<?= $regex_years ?>" autocomplete="off">
         </div>
       </div>
 
       <div class="form-group form-group-line">
         <label for="">
-          <?= get_icon('facility') ?>
+          <?= get_icon('people') ?>
           <span>Antall personer</span>
         </label>
         <div class="input input-select">
@@ -76,7 +91,7 @@
 
       <div class="form-group form-group-submit">
         <div class="input">
-          <button type="submit" class="button-secondary">Finn rom</button>
+          <button type="submit">Finn rom</button>
         </div>
       </div>
     </form>

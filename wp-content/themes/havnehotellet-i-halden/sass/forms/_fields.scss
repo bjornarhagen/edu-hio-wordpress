@@ -21,8 +21,9 @@ textarea, select {
 
 	&:focus,
 	&:hover {
-		color: $shade-darkest;
-		border-color: $shade-dark;
+		color: $primary-dark;
+		border-color: $primary-dark;
+		background-color: $primary-light;
 	}
 }
 
