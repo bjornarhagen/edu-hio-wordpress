@@ -57,19 +57,35 @@
 				the_post();
 
 				$header_display = get_field('header_display');
-				$header_heading = get_field('header_heading');
-				$header_text = get_field('header_text');
 
-				// Get regular page title as fallback
-				if (empty($header_heading) && is_singular()):
-					$header_heading = get_the_title();
+				if (!empty($header_display)):
+					$header_heading = get_field('header_heading');
+					$header_text = get_field('header_text');
+
+					// Get regular page title as fallback
+					if (empty($header_heading) && is_singular()):
+						$header_heading = get_the_title();
+					endif;
+
+					$header_image = get_stylesheet_directory_uri() . '/images/havnehotellet-i-halden.jpg';
+
+					if (has_post_thumbnail( get_the_ID() ) ):
+						$thumbnail_id = get_post_thumbnail_id( get_the_ID() );
+						$header_image = wp_get_attachment_image_src($thumbnail_id, 'single-post-thumbnail');
+						$header_image = $header_image[0];
+					endif;
+
+					set_query_var( 'header_heading', $header_heading );
+					set_query_var( 'header_text', $header_text );
+					set_query_var( 'header_image', $header_image );
+
+					if (is_front_page()):
+						get_template_part( 'template-parts/header', 'front_page' );
+					else:
+						get_template_part( 'template-parts/header', get_post_type() );
+					endif;
+				else:
+					get_template_part( 'template-parts/header', 'none' );
 				endif;
-
-				if (!empty($header_display)): ?>
-					<header class="page-header">
-						<h1 class="page-title entry-title"><?= $header_heading ?></h1>
-						<p class="page-description"><?= $header_text ?></p>
-					</header>
-				<?php endif;
 			endwhile; // End of the loop.
 		?>
