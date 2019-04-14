@@ -1,0 +1,45 @@
+#content{
+    .page-header{ margin-bottom: 2em;
+        h1 {color: white;}
+    }
+       
+    #kontakt-oss-main{   
+        display: grid;
+        grid-template-areas:
+                "h2  h2"
+                "p  caldera"
+                "kart   kart";
+    
+        h2{grid-area: h2;}
+        p{grid-area: p;}
+        #caldera_form_1{    
+            grid-area: caldera; 
+           
+            // caldera button
+            #fld_7908577_1{
+                background-color:rgba(0, 0, 0, 0.712);
+                color: whitesmoke;
+            }
+            #fld_7908577_1:hover{
+                background-color: darkgoldenrod;
+            }
+            .row{
+                display: flex; 
+                flex-direction: column;
+
+            }
+        }
+        
+        #kart{grid-area: kart; margin: 2em 0 2em 0}
+    }   
+                 
+    @media screen and (max-width: 736px){
+        #kontakt-oss-main{ 
+            display:flex;
+            flex-direction: column;
+            #kart,#caldera_form_1,form,h2,p{width:100%;}
+        }
+    }
+
+}
+ 

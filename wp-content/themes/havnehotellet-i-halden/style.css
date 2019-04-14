@@ -1114,6 +1114,69 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+## Contact-and-Restaurant
+--------------------------------------------------------------*/
+
+#content .page-header {
+  margin-bottom: 2em;
+}
+
+#content .page-header h1 {
+  color: white;
+}
+
+#content #kontakt-oss-main {
+  display: grid;
+  grid-template-areas: "h2  h2" "p  caldera" "kart   kart";
+}
+
+#content #kontakt-oss-main h2 {
+  grid-area: h2;
+}
+
+#content #kontakt-oss-main p {
+  grid-area: p;
+}
+
+#content #kontakt-oss-main #caldera_form_1 {
+  grid-area: caldera;
+}
+
+#content #kontakt-oss-main #caldera_form_1 #fld_7908577_1 {
+  background-color: rgba(0, 0, 0, 0.712);
+  color: whitesmoke;
+}
+
+#content #kontakt-oss-main #caldera_form_1 #fld_7908577_1:hover {
+  background-color: darkgoldenrod;
+}
+
+#content #kontakt-oss-main #caldera_form_1 .row {
+  display: flex;
+  flex-direction: column;
+}
+
+#content #kontakt-oss-main #kart {
+  grid-area: kart;
+  margin: 2em 0 2em 0;
+}
+
+@media screen and (max-width: 736px) {
+  #content #kontakt-oss-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #content #kontakt-oss-main #kart,
+  #content #kontakt-oss-main #caldera_form_1,
+  #content #kontakt-oss-main form,
+  #content #kontakt-oss-main h2,
+  #content #kontakt-oss-main p {
+    width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 
