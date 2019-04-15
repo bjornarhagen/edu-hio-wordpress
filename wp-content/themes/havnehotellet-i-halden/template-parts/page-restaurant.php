@@ -28,5 +28,6 @@
               <input type="time" name="time" placeholder="Time">
               <button type="submit">Bestill</button>
           </form>
+          <div id="restaurant-bilde"><img src="https://itstud.hiof.no/uinv19/uinv19gr2/wp-content/uploads/2019/04/hh-restaurant2.jpg" alt="Restaurant bilde"></div>
     </main>      
 <?php get_footer(); ?>
