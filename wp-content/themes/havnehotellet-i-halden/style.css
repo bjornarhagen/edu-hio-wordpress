@@ -1117,61 +1117,124 @@ a:active {
 ## Contact-and-Restaurant
 --------------------------------------------------------------*/
 
-#content .page-header {
+.page-header {
   margin-bottom: 2em;
 }
 
-#content .page-header h1 {
+.page-header h1 {
   color: white;
 }
 
-#content #kontakt-oss-main {
+#kontakt-oss-main {
   display: grid;
   grid-template-areas: "h2  h2" "p  caldera" "kart   kart";
 }
 
-#content #kontakt-oss-main h2 {
+#kontakt-oss-main h2 {
   grid-area: h2;
 }
 
-#content #kontakt-oss-main p {
+#kontakt-oss-main p {
   grid-area: p;
 }
 
-#content #kontakt-oss-main #caldera_form_1 {
+#kontakt-oss-main #caldera_form_1 {
   grid-area: caldera;
 }
 
-#content #kontakt-oss-main #caldera_form_1 #fld_7908577_1 {
+#kontakt-oss-main #caldera_form_1 #fld_7908577_1 {
   background-color: rgba(0, 0, 0, 0.712);
   color: whitesmoke;
 }
 
-#content #kontakt-oss-main #caldera_form_1 #fld_7908577_1:hover {
+#kontakt-oss-main #caldera_form_1 #fld_7908577_1:hover {
   background-color: darkgoldenrod;
 }
 
-#content #kontakt-oss-main #caldera_form_1 .row {
+#kontakt-oss-main #caldera_form_1 .row {
   display: flex;
   flex-direction: column;
 }
 
-#content #kontakt-oss-main #kart {
+#kontakt-oss-main #kart {
   grid-area: kart;
   margin: 2em 0 2em 0;
 }
 
 @media screen and (max-width: 736px) {
-  #content #kontakt-oss-main {
+  #kontakt-oss-main {
     display: flex;
     flex-direction: column;
   }
 
-  #content #kontakt-oss-main #kart,
-  #content #kontakt-oss-main #caldera_form_1,
-  #content #kontakt-oss-main form,
-  #content #kontakt-oss-main h2,
-  #content #kontakt-oss-main p {
+  #kontakt-oss-main #kart,
+  #kontakt-oss-main #caldera_form_1,
+  #kontakt-oss-main form,
+  #kontakt-oss-main h2,
+  #kontakt-oss-main p {
+    width: 100%;
+  }
+}
+
+#restaurant-main {
+  padding: 30px;
+}
+
+#restaurant-main a {
+  background-color: rgba(128, 128, 128, 0.76);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+#restaurant-main a:hover {
+  background-color: rgba(0, 0, 0, 0.849);
+  color: rgba(255, 255, 255, 0.747);
+}
+
+#restaurant-main #bestill-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  float: right;
+  justify-content: center;
+  background-color: rgba(119, 136, 153, 0.281);
+}
+
+#restaurant-main #bestill-form h2,
+#restaurant-main #bestill-form label,
+#restaurant-main #bestill-form input {
+  text-align: center;
+}
+
+#restaurant-main #bestill-form label {
+  font-size: 150%;
+}
+
+#restaurant-main #bestill-form button {
+  background: #221e1e;
+  color: white;
+  height: 50px;
+  font-size: 130%;
+}
+
+#restaurant-main #bestill-form button:hover {
+  background-color: darkgoldenrod;
+}
+
+#restaurant-main figure img {
+  width: 100%;
+}
+
+@media screen and (max-width: 736px) {
+  #restaurant-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #restaurant-main #bestill-form {
     width: 100%;
   }
 }
