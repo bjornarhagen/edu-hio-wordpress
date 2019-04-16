@@ -1117,14 +1117,6 @@ a:active {
 ## Contact-and-Restaurant
 --------------------------------------------------------------*/
 
-.page-header {
-  margin-bottom: 2em;
-}
-
-.page-header h1 {
-  color: white;
-}
-
 #kontakt-oss-main {
   display: grid;
   grid-template-areas: "h2  h2" "p  caldera" "kart   kart";
