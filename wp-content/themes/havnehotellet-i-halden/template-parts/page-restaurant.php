@@ -10,11 +10,15 @@
         <?php   
           the_title(); 
           the_content();
+          $arg = array('category'=>'6');
+          if($arg):
+          $posts = get_posts($arg);
           
-          $posts = get_posts();
-            foreach ( $posts as $post ) : ?>  
+            foreach ( $posts as $post ) : ?> 
+             
             <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a>
-        <?php endforeach;?>
+          <?php endforeach;
+        endif?>
 
           <form action="" id="bestill-form" method="post">
               <h2>Reserver et bord </h2>
