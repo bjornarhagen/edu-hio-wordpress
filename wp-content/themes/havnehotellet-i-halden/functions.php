@@ -261,9 +261,10 @@ if ( ! function_exists( 'havnehotellet_i_halden_setup' ) ) :
 
 				// Hide for screen-readers
 				$svg->documentElement->setAttribute('aria-hidden', 'true');
+				$svg->documentElement->setAttribute('class', 'icon');
 
 				// Remove the title
-				$svg_title = $svg->getElementsByTagName("title")->item(0);
+				$svg_title = $svg->getElementsByTagName('title')->item(0);
 				if ($svg_title != null) {
 						$svg_head = $svg_title->parentNode;
 						$svg_head->removeChild($svg_title);
@@ -272,7 +273,7 @@ if ( ! function_exists( 'havnehotellet_i_halden_setup' ) ) :
 				$svg_html = $svg->saveXML($svg->documentElement);
 				$svg_html = preg_replace('/\s+/', ' ', $svg_html); // Remove line breaks and duplicate whitespace
 
-				return '<div class="icon">' . $svg_html . '</div>';
+				return $svg_html;
 			}
 		endif;
 	}
