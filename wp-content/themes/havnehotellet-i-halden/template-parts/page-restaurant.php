@@ -17,9 +17,9 @@
             <p> <?php the_field('info_felt');?> </p>       
         </div>
         <div id="linker">
-            <a href="http://localhost:3000/se-meny/">Se meny</a> 
-            <a href="http://localhost:3000/bilde-galleri/">Bilde galleri</a>
-            <a href="http://havnehotellet-i-halden.local/se-mer-informasjon/"> Se mer informasjon </a>
+            <a href="<?php echo esc_url( get_permalink(get_page_by_title('Se meny'))); ?>"> Se meny</a> 
+            <a href="<?php echo esc_url( get_permalink(get_page_by_title('Bilde galleri'))); ?>">Bilde galleri</a>
+            <a href="<?php echo esc_url( get_permalink(get_page_by_title('Se mer informasjon'))); ?>"> Se mer informasjon </a>
             <p id="semeny"> <?php the_field('se_meny');?></p>
         </div>
 
@@ -42,7 +42,7 @@
 
         <div id="kontakt_link">
             <h2> Vi hjelper deg gjerne </h2> 
-            <a href="<?php the_field('link_field') ?>"> Kontakt oss </a>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_title('Kontakt oss'))); ?>"> Kontakt oss </a>
         </div>
     </main>  
      
