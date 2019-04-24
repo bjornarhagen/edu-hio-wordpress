@@ -16,6 +16,7 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<?php
+			the_custom_logo();
 			wp_nav_menu( array(
 				'theme_location' => 'menu-footer-primary',
 				'menu_id'        => 'menu-footer-primary',
