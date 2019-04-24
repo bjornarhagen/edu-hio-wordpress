@@ -75,6 +75,80 @@
                 "maxlength": "",
                 "rows": 4,
                 "new_lines": ""
+            },
+            {
+                "key": "field_5cc02f680352c",
+                "label": "Header - tekst farge",
+                "name": "header_text_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5cac87cb89217",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#000000"
+            },
+            {
+                "key": "field_5cc01fcb917a1",
+                "label": "Header - overlay farge",
+                "name": "header_overlay_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5cac87cb89217",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#ffffff"
+            },
+            {
+                "key": "field_5cc02103917a2",
+                "label": "Header overlay gjennomsiktighet",
+                "name": "header_overlay_opacity",
+                "type": "range",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5cac87cb89217",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 50,
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "prepend": "Opak",
+                "append": "Gjennomsiktig"
             }
         ],
         "location": [

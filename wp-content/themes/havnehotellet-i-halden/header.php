@@ -58,34 +58,58 @@
 
 				$header_display = get_field('header_display');
 
-				if (!empty($header_display)):
-					$header_heading = get_field('header_heading');
-					$header_text = get_field('header_text');
+    // Get header fields if the header is set to display
+    if (!empty($header_display)):
+        $header_heading = get_field('header_heading');
+        $header_text = get_field('header_text');
+        $header_text_color = get_field('header_text_color');
+        $header_overlay_color = get_field('header_overlay_color');
+        $header_overlay_opacity = (int) get_field('header_overlay_opacity');
 
-					// Get regular page title as fallback
-					if (empty($header_heading) && is_singular()):
-						$header_heading = get_the_title();
-					endif;
+        // Set fallback text color
+        if (empty($header_text_color)) {
+            $header_text_color = '#000';
+        }
 
-					$header_image = get_stylesheet_directory_uri() . '/images/havnehotellet-i-halden.jpg';
+        // Set fallback overlay color
+        if (empty($header_overlay_color)) {
+            $header_overlay_color = '#fff';
+        }
 
-					if (has_post_thumbnail( get_the_ID() ) ):
-						$thumbnail_id = get_post_thumbnail_id( get_the_ID() );
-						$header_image = wp_get_attachment_image_src($thumbnail_id, 'single-post-thumbnail');
-						$header_image = $header_image[0];
-					endif;
+        // convert opacity from range 0-100 to 0-1
+        $header_overlay_opacity = $header_overlay_opacity / 100;
 
-					set_query_var( 'header_heading', $header_heading );
-					set_query_var( 'header_text', $header_text );
-					set_query_var( 'header_image', $header_image );
+        // Get regular page title as fallback
+        if (empty($header_heading) && is_singular()):
+            $header_heading = get_the_title();
+        endif;
 
-					if (is_front_page()):
-						get_template_part( 'template-parts/header', 'front_page' );
-					else:
-						get_template_part( 'template-parts/header', get_post_type() );
-					endif;
-				else:
-					get_template_part( 'template-parts/header', 'none' );
-				endif;
-			endwhile; // End of the loop.
-		?>
+        // Get fallback background image
+        $header_image = get_stylesheet_directory_uri() . '/images/havnehotellet-i-halden.jpg';
+
+        // Get this posts featured image
+        if (has_post_thumbnail(get_the_ID())):
+            $thumbnail_id = get_post_thumbnail_id(get_the_ID());
+            $header_image = wp_get_attachment_image_src($thumbnail_id, 'single-post-thumbnail');
+            $header_image = $header_image[0];
+        endif;
+
+        // Make the variables available to the template part
+        set_query_var('header_heading', $header_heading);
+        set_query_var('header_text', $header_text);
+        set_query_var('header_image', $header_image);
+        set_query_var('header_text_color', $header_text_color);
+        set_query_var('header_overlay_color', $header_overlay_color);
+        set_query_var('header_overlay_opacity', $header_overlay_opacity);
+
+        // Get header template part
+        if (is_front_page()):
+            get_template_part('template-parts/header', 'front_page');
+        else:
+            get_template_part('template-parts/header', get_post_type());
+        endif;
+    else:
+        get_template_part('template-parts/header', 'none');
+    endif;
+endwhile; // End of the loop.
+?>

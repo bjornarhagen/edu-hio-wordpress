@@ -1,12 +1,14 @@
-<header class="page-header" style="background-image: url('<?= $header_image ?>')">
+<header class="page-header">
+  <div class="page-header-overlay" style="background-color: <?=$header_overlay_color?>; opacity: <?=$header_overlay_opacity?>;"></div>
+  <div class="page-header-background" style="background-image: url('<?=$header_image?>');"></div>
   <div id="page-navigation-padding"></div>
+  <div class="page-header-content" style="color: <?=$header_text_color?>;">
+    <h1 class="page-title entry-title"><?=$header_heading?></h1>
+    <p class="page-description"><?=$header_text?></p>
 
-  <h1 class="page-title entry-title"><?= $header_heading ?></h1>
-  <p class="page-description"><?= $header_text ?></p>
-
-  <?php
-    // 01-31
-    $regex_days = '0*([1-9]|[12][0-9]|3[01])';
+<?php
+// 01-31
+$regex_days = '0*([1-9]|[12][0-9]|3[01])';
 
     // 01-12
     $regex_months = '0*([1-9]|1[0-2])';
@@ -96,4 +98,5 @@
       </div>
     </form>
   </section>
+  </div>
 </header>
