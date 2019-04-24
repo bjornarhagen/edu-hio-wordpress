@@ -97,7 +97,7 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "#000000"
+                "default_value": "#fff"
             },
             {
                 "key": "field_5cc01fcb917a1",
@@ -120,11 +120,11 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "#ffffff"
+                "default_value": "#000"
             },
             {
                 "key": "field_5cc02103917a2",
-                "label": "Header overlay gjennomsiktighet",
+                "label": "Header - overlay gjennomsiktighet",
                 "name": "header_overlay_opacity",
                 "type": "range",
                 "instructions": "",
@@ -149,6 +149,42 @@
                 "step": 5,
                 "prepend": "Opak",
                 "append": "Gjennomsiktig"
+            },
+            {
+                "key": "field_5cc04e450fcd2",
+                "label": "Header - bilde posisjon",
+                "name": "header_image_alignment",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5cac87cb89217",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "top": "Topp",
+                    "center": "Sentrert",
+                    "bottom": "Bunn"
+                },
+                "default_value": [
+                    "center"
+                ],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
             }
         ],
         "location": [
