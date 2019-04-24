@@ -1219,6 +1219,7 @@ a:active {
 }
 
 #restaurant-main #linker a {
+  display: inline-block;
   background-color: #ccc;
   color: #000;
   padding: 0.7em;
