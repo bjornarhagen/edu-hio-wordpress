@@ -77,20 +77,20 @@
                 }
 
                 // convert opacity from range 0-100 to 0-1
-        $header_overlay_opacity = $header_overlay_opacity / 100;
+                $header_overlay_opacity = $header_overlay_opacity / 100;
 
-        // Get regular page title as fallback
-        if (empty($header_heading) && is_singular()):
-            $header_heading = get_the_title();
-        endif;
+                // Get regular page title as fallback
+                if (empty($header_heading) && is_singular()):
+                    $header_heading = get_the_title();
+                endif;
 
-        // Get fallback background image
-        $header_image = get_stylesheet_directory_uri() . '/images/havnehotellet-i-halden.jpg';
+                // Get fallback background image
+                $header_image = get_stylesheet_directory_uri() . '/images/havnehotellet-i-halden.jpg';
 
-        // Get this posts featured image
-        if (has_post_thumbnail(get_the_ID())):
-            $thumbnail_id = get_post_thumbnail_id(get_the_ID());
-            $header_image = wp_get_attachment_image_src($thumbnail_id, 'single-post-thumbnail');
+                // Get this posts featured image
+                if (has_post_thumbnail(get_the_ID())):
+                    $thumbnail_id = get_post_thumbnail_id(get_the_ID());
+                    $header_image = wp_get_attachment_image_src($thumbnail_id, 'single-post-thumbnail');
                     $header_image = $header_image[0];
                 endif;
 

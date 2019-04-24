@@ -91,6 +91,53 @@ body.home .page-header {
       height: 4rem;
       margin-bottom: 8rem;
     }
+
+    .booking-form-intro-text {
+      position: relative;
+      top: -2em;
+      margin: 0;
+      line-height: 1;
+
+      > span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+        font-weight: 700;
+
+        @media screen and (min-width: $size__medium) {
+          display: inline-block;
+          max-width: 60%;
+          vertical-align: middle;
+        }
+      }
+
+      a {
+        color: currentColor;
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        margin-top: 0.4em;
+
+        @media screen and (min-width: $size__medium) {
+          margin-top: 0;
+          margin-left: 0.4em;
+        }
+
+        &:focus,
+        &:hover {
+          opacity: 0.7;
+        }
+
+        .icon {
+          width: 1em;
+          height: 1em;
+        }
+      }
+    }
   }
 
   #booking-form {
