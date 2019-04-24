@@ -19,11 +19,9 @@
 	    align-items: flex-start;
 
 	    @media screen and (min-width: 1024px) {
-	    	article {
-	    		&:nth-child(odd) {
-	    			margin-top: 100px;
-	    		}
-	    	}
+    		&:first-child {
+    			margin-top: 100px;
+    		}
 	    }
 
     	.archive-content {

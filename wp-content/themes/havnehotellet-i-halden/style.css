@@ -1050,7 +1050,7 @@ a:active {
 }
 
 @media screen and (min-width: 1024px) {
-  .content-area .archive-content-wrapper article:nth-child(odd) {
+  .content-area .archive-content-wrapper:first-child {
     margin-top: 100px;
   }
 }
@@ -1353,6 +1353,28 @@ body.home .page-header #booking-form .form-group-submit button:hover,
 body.home .page-header #booking-form .form-group-submit button:focus {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+  background-color: #000;
+  color: #fff;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #AE9731;
+}
+
+.site-footer .page_item {
+  list-style-type: none;
 }
 
 /*--------------------------------------------------------------

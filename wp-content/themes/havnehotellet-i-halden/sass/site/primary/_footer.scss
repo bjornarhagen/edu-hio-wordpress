@@ -1,0 +1,17 @@
+.site-footer {
+	background-color: $shade-darkest;
+	color: $shade-lightest;
+
+	a {
+		color: $shade-lightest;
+		text-decoration: none;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	.page_item {
+		list-style-type: none;
+	}
+}
