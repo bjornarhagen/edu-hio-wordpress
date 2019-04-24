@@ -6,8 +6,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.button {
+.button,
+a.button {
 	cursor: pointer;
+	display: inline-block;
 	color: $primary-light;
 	background-color: $primary;
 	padding: 0.4em 0.8em;
@@ -39,7 +41,8 @@ input[type="submit"],
 	}
 }
 
-.button-secondary {
+.button-secondary,
+a.button-secondary {
 	color: $shade-lightest;
 	border-color: $shade-darkest;
 	background-color: $shade-darkest;
@@ -50,6 +53,6 @@ input[type="submit"],
 		color: $shade-dark;
 		border-color: $shade-light;
 		background-color: $shade-light;
-		@include hih-button-shadow($shade-light);
+		@include hih-button-shadow($shade-dark);
 	}
 }

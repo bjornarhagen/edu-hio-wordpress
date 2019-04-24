@@ -11,13 +11,15 @@
     padding: 4em 8em;
   }
 
-  .page-title {
-    margin: 0;
-    font-size: 3.5em;
+  .page-title,
+  .page-description {
     max-width: 30rem;
   }
 
-  .page-description {
+  .page-title {
+    margin: 0;
+    font-size: 3.5em;
+    hyphens: auto;
   }
 }
 
@@ -38,21 +40,26 @@ body.home .page-header {
   #booking-form {
     display: flex;
     flex-direction: column;
-    background-color: $shade-light;
-    background-color: #fff;
+    background-color: $shade-lightest;
     width: 100%;
     margin: 0 auto;
-    padding: 1em;
+    padding: 2em 0 0 0;
 
     @media screen and (min-width: $size__medium) {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      flex-direction: row;
-      background-color: $shade-light;
       height: 8rem;
-      padding-bottom: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr 1fr;
+      grid-gap: 2em;
+      box-shadow: 0 1em 2em -1em rgba($shade-light, 1);
+    }
+
+    @media screen and (min-width: $size__large) {
+      grid-gap: 4em;
     }
   }
 }
@@ -61,25 +68,35 @@ body.home .page-header #booking-form {
   .form-group {
     display: flex;
     flex-direction: column;
-    margin-top: 1em;
+    padding: 2em 2em 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
 
     @media screen and (min-width: $size__medium) {
-      margin-top: 0;
-      width: (100%/4);
-      padding-right: 1em;
+      padding: 0;
       justify-content: center;
 
-      &:last-child {
-        padding-right: 0;
+      &:first-child {
+        padding-left: 2em;
       }
     }
 
-    &:first-child {
-      margin-top: 0;
+    @media screen and (min-width: $size__large) {
+      &:first-child {
+        padding-left: 4em;
+      }
     }
 
     label {
       font-weight: 700;
+      white-space: nowrap;
+      margin-bottom: 0.2em;
+
+      .icon {
+        margin-right: 0.2em;
+      }
     }
 
     .input {
@@ -97,35 +114,76 @@ body.home .page-header #booking-form {
     .input-date {
       input {
         width: (100%/3);
-        border-left-width: 0px;
-        border-right-width: 0px;
+        border-color: $shade-light;
         border-radius: 0;
+        border-left-width: 0px;
+
+        &:first-child {
+          border-left-width: 1px;
+        }
+
+        &:hover,
+        &:focus {
+          border-top-color: $primary-dark;
+          border-bottom-color: $primary-dark;
+        }
 
         &:first-child {
           border-radius: 4px 0px 0px 4px;
-          border-left-width: 1px;
+
+          &:hover,
+          &:focus {
+            border-left-width: 1px;
+            border-left-color: $primary-dark;
+          }
         }
 
         &:last-child {
           border-radius: 0px 4px 4px 0px;
-          border-right-width: 1px;
+
+          &:hover,
+          &:focus {
+            border-right-width: 1px;
+            border-right-color: $primary-dark;
+          }
         }
       }
     }
   }
 
-  .form-group-line {
-    // flex-direction: row;
-  }
-
   .form-group-submit {
+    padding: 2em 0 0;
+
+    @media screen and (min-width: $size__medium) {
+      padding: 0 0 0 1em;
+    }
+
+    @media screen and (min-width: $size__large) {
+      padding: 0 0 0 2em;
+      padding: 0;
+    }
+
+    .input {
+      height: 100%;
+    }
+
     input, button {
-      // background-color: red;
       width: 100%;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 1em;
+      font-size: 1.33rem;
+      text-transform: uppercase;
+
+      @media screen and (min-width: $size__large) {
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
 
       &:hover,
       &:focus {
-        background-color: $shade-lightest;
+        transform: scale(1.0);
       }
     }
   }
