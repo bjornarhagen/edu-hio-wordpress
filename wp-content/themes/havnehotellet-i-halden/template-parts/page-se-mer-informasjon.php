@@ -1,5 +1,5 @@
 <?php 
-    /* Template Name: restaurant 
+    /* Template Name: se-mer-informasjon
     * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
     *
     * @package Havnehotellet_i_Halden
@@ -20,7 +20,7 @@
             <a href="http://localhost:3000/se-meny/">Se meny</a> 
             <a href="http://localhost:3000/bilde-galleri/">Bilde galleri</a>
             <a href="http://havnehotellet-i-halden.local/se-mer-informasjon/"> Se mer informasjon </a>
-            <p id="semeny"> <?php the_field('se_meny');?></p>
+            <p id="seinfo"><?php the_field('se_mer_informasjon');?></p> 
         </div>
 
         <form action="" id="bestill-form" method="post">

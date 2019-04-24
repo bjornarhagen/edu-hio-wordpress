@@ -1,5 +1,5 @@
 <?php 
-    /* Template Name: restaurant 
+    /* Template Name: se-meny
     * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
     *
     * @package Havnehotellet_i_Halden
