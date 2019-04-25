@@ -243,6 +243,57 @@ if ( ! function_exists( 'havnehotellet_i_halden_setup' ) ) :
 				'capability_type'       => 'page',
 			);
 			register_post_type('facility', $facilities_args);
+
+			$meals_labels = array(
+				'name'                  => _x('Måltider', 'Post Type General Name', 'havnehotellet_i_halden'),
+				'singular_name'         => _x('Måltid', 'Post Type Singular Name', 'havnehotellet_i_halden'),
+				'menu_name'             => __('Måltider', 'havnehotellet_i_halden'),
+				'name_admin_bar'        => __('Måltid', 'havnehotellet_i_halden'),
+				'archives'              => __('Måltid Archives', 'havnehotellet_i_halden'),
+				'attributes'            => __('Måltid Attributes', 'havnehotellet_i_halden'),
+				'parent_item_colon'     => __('Parent Måltid:', 'havnehotellet_i_halden'),
+				'all_items'             => __('Alle Måltider', 'havnehotellet_i_halden'),
+				'add_new_item'          => __('Legg til ny Måltid', 'havnehotellet_i_halden'),
+				'add_new'               => __('Legg til ny', 'havnehotellet_i_halden'),
+				'new_item'              => __('Ny Måltid', 'havnehotellet_i_halden'),
+				'edit_item'             => __('Rediger Måltid', 'havnehotellet_i_halden'),
+				'update_item'           => __('Oppdater Måltid', 'havnehotellet_i_halden'),
+				'view_item'             => __('Se Måltid', 'havnehotellet_i_halden'),
+				'view_items'            => __('Se Måltider', 'havnehotellet_i_halden'),
+				'search_items'          => __('Søk Måltid', 'havnehotellet_i_halden'),
+				'not_found'             => __('Ikke funnet', 'havnehotellet_i_halden'),
+				'not_found_in_trash'    => __('Ikke funnet i Trash', 'havnehotellet_i_halden'),
+				'featured_image'        => __('Featured Image', 'havnehotellet_i_halden'),
+				'set_featured_image'    => __('Sett featured image', 'havnehotellet_i_halden'),
+				'remove_featured_image' => __('Slett featured image', 'havnehotellet_i_halden'),
+				'use_featured_image'    => __('Bruk som featured image', 'havnehotellet_i_halden'),
+				'insert_into_item'      => __('Insert into facility', 'havnehotellet_i_halden'),
+				'uploaded_to_this_item' => __('Uploaded to this facility', 'havnehotellet_i_halden'),
+				'items_list'            => __('Måltider list', 'havnehotellet_i_halden'),
+				'items_list_navigation' => __('Måltider list navigation', 'havnehotellet_i_halden'),
+				'filter_items_list'     => __('Filter meals list', 'havnehotellet_i_halden'),
+			);
+			$meals_args = array(
+				'label'                 => __('Måltider', 'havnehotellet_i_halden'),
+				'description'           => __('Hotellets måltider', 'havnehotellet_i_halden'),
+				'labels'                => $meals_labels,
+				'supports'              => array('title', 'editor', 'thumbnail', 'custom-fields'),
+				'taxonomies'            => array('post_tag'),
+				'hierarchical'          => false,
+				'public'                => true,
+				'show_ui'               => true,
+				'show_in_menu'          => true,
+				'menu_position'         => 5,
+				'menu_icon'             => '/wp-content/themes/havnehotellet-i-halden/icons/coffee.svg',
+				'show_in_admin_bar'     => true,
+				'show_in_nav_menus'     => true,
+				'can_export'            => true,
+				'has_archive'           => true,
+				'exclude_from_search'   => false,
+				'publicly_queryable'    => true,
+				'capability_type'       => 'page',
+			);
+			register_post_type('meal', $meals_args);
 		}
 		add_action('init', 'custom_post_type', 0);
 
