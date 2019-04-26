@@ -75,15 +75,14 @@
     display: grid;
     grid-template-columns: auto auto;
     grid-auto-flow: dense;
-    grid-column-gap: 2em;
-    grid-row-gap: 2em;
+    grid-column-gap: 3em;
+    grid-row-gap: 3em;
     grid-template-areas: 
           "havnekroa_tittel openning_time"
-          "linker bestilling_form"
-          "linker ."
-          "linker ."
-          "bilde  bilde"
-          "pagination pagination"
+          "innhold bestilling_form"
+          "innhold ."
+          "innhold ."
+          "bilder  bilder"
           "kontakt_link  kontakt_link";
   
       #havnekroa_tittel{
@@ -92,14 +91,14 @@
       #openning_time{
         grid-area: openning_time;
       }
-     #linker{
-        grid-area: linker;
+     #innhold{
+        grid-area: innhold;
         a {
           display:inline-block;
-          background-color:  #ccc;
+          background-color:#ccc;
           color: #000;
           padding: 0.7em;
-          margin:0 0.5em 0 0;
+          margin:0 0.5em 0.5em 0;
           text-decoration: none;
         }
         
@@ -107,20 +106,36 @@
           background-color: #000;
           color: #fff;
         }
+        table {
+          border: 1px dotted #ccc;
+          padding: 8px; 
+        }
+        table tr th {
+            text-align: left;
+            padding: 5px; 
+            border: 1px dotted #ccc;
+            background-color: #ccc;
+        }
+        table tr td {
+            padding: 5px;
+            text-align: left; 
+            border: 1px dotted #ccc;
+        }
+        
      }
      #bestill-form {
         grid-area: bestilling_form;
         background-color: #ccc;
         padding: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
         input {
           text-align: center;
           width: 80%; 
           padding: 0.5em;
-          margin: 0.2em;
-        }
-        label {
-          font-size: 155%;
-          padding: 0.5em;
+          margin: 0.3em;
         }
         
         button {
@@ -136,25 +151,29 @@
           background-color: #fff;
           color: #000;
         }
-        
-        
+          
       }  
-      #restaurant-bilde {
-        grid-area: bilde;
-        img {
-        width: 100%;
-        height: 300px;
-        margin: 2em 0 2em 0;
+      #slide-bilder {
+        grid-area: bilder;
+        
+        #n2-ss-2-arrow-previous,#n2-ss-2-arrow-next{
+          margin-bottom: -5em;
+          margin-left: 1em;
         }
+       
+        div#n2-ss-2 .n2-style-7c4ebf303396588b22743ad22672cc36-simple{
+            width: 60%;
+            float: right;
+            span{
+              display: block;
+            }
+        } 
       }  
 
-      #pagination{
-        grid-area: pagination;
-      }
       #kontakt_link{
         grid-area: kontakt_link;
-        background-image: url("http://havnehotellet-i-halden.local/wp-content/uploads/2019/04/hh-mat-1.jpg");
-        background-position: center;
+        background-image: url("http://havnehotellet-i-halden.local/wp-content/uploads/2019/04/hh-vin.jpg");
+        text-align: center;
         background-repeat: no-repeat;
         height: 300px;
         h2{
@@ -180,19 +199,24 @@
     #restaurant-main {
       display: flex;
       flex-direction: column;
+      justify-content: space-around;
       width: 100%;
-      justify-content: center;
-      #linker{
+      #innhold{
         display:flex;
         flex-direction: column;
-        text-align: center;
+        a{
+          text-align: center;
+        }
       }
       #bestill-form {
         display: flex;
         flex-direction: column;
         width:100%;
-        text-align: center;
-        margin: 0 auto;
+        justify-content: center;
+        margin-bottom: 1em;
+      }
+      #slide-bilder{
+        margin: 1em;
       }
     }
 }

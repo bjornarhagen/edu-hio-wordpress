@@ -1,5 +1,5 @@
 <?php 
-    /* Template Name: kontakt oss 
+    /* Template Name: Kontakt oss 
         * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
         *
         * @package Havnehotellet_i_Halden
