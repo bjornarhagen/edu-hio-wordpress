@@ -15,20 +15,6 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-				// Sjekk om siden er custom post type
-				if ( is_post_type_archive() ) {
-				    ?>
-				    <h1 class="page-title"><?php post_type_archive_title(); ?></h1>
-				    <?php
-				} else {
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-				}
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
 			<section class="archive-content-wrapper">
 			<?php
 			/* Start the Loop */
@@ -45,11 +31,11 @@ get_header();
 			endwhile;
 			?>
 			</section>
-			
+
 			<?php
 
 			the_posts_navigation();
-			
+
 
 		else :
 
