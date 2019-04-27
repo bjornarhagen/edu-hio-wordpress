@@ -8,7 +8,7 @@ if (function_exists('get_field') && !empty(get_field('header_display'))) :
   $header_overlay_opacity = (int)get_field('header_overlay_opacity');
   $header_image_alignment = get_field('header_image_alignment');
 
-<<<<<<< HEAD
+
 /**
  * Set up the WordPress core custom header feature.
  *
@@ -27,19 +27,18 @@ function havnehotellet_i_halden_custom_header_setup() {
 	require(__DIR__ . '/custom-header-fields.php');
 }
 add_action( 'after_setup_theme', 'havnehotellet_i_halden_custom_header_setup' );
-=======
-  // Set fallback text color
+  
+// Set fallback text color
   if (empty($header_text_color)) {
     $header_text_color = '#fff';
   }
->>>>>>> master
 
   // Set fallback overlay color
   if (empty($header_overlay_color)) {
     $header_overlay_color = '#000';
   }
 
-<<<<<<< HEAD
+
 		/*
 		* If no custom options for text are set, let's bail.
 		* get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
@@ -47,17 +46,16 @@ add_action( 'after_setup_theme', 'havnehotellet_i_halden_custom_header_setup' );
 		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			$header_text_color = false;
 		}
-=======
+
   // convert opacity from range 0-100 to 0-1
   $header_overlay_opacity = $header_overlay_opacity / 100;
->>>>>>> master
+
 
   // Get regular page title as fallback
   if (empty($header_heading) && is_singular()) :
     $header_heading = get_the_title();
   endif;
 
-<<<<<<< HEAD
 		// If we get this far, we have custom styles. Let's do this.
 		?>
 		<style type="text/css">
@@ -73,8 +71,8 @@ add_action( 'after_setup_theme', 'havnehotellet_i_halden_custom_header_setup' );
 			<?php endif; ?>
 		</style>
 		<?php
-	}
-=======
+	
+
   // Get fallback background image
   $header_image = get_stylesheet_directory_uri() . '/images/havnehotellet-i-halden.jpg';
 
@@ -126,7 +124,7 @@ elseif (is_404()) :
   get_template_part('template-parts/header', '404');
 else :
   get_template_part('template-parts/header', 'none');
->>>>>>> master
+
 endif;
 
 

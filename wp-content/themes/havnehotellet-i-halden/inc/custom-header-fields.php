@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+ 
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
@@ -99,7 +99,7 @@ acf_add_local_field_group(array(
 	'description' => '',
 ));
 
-=======
+
 
 if (function_exists('acf_add_local_field_group')):
     $acf_files = ['custom-header-fields.json', 'custom-header-fields-frontpage-extra.json'];
@@ -118,5 +118,5 @@ if (function_exists('acf_add_local_field_group')):
             throw new Exception("Couldn't import ACF fields", 500);
         }
     }
->>>>>>> master
+endif;
 endif;
