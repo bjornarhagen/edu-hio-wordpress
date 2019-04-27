@@ -23,6 +23,10 @@
             <p> <?php the_field('innhold_felt');?></p>
         </div>
 
+        <div id="">
+
+        </div> 
+
         <form action="" id="bestill-form" method="post">
             <h2>Reserver et bord </h2>
             <input type="text" name="kort_id"  placeholder="Kort id" required>

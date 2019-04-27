@@ -569,7 +569,6 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 
-<<<<<<< HEAD
 button,
 .button {
   color: #000;
@@ -590,8 +589,6 @@ button:visited,
   color: #000;
 }
 
-=======
->>>>>>> master
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -758,13 +755,6 @@ textarea {
 
 a {
   color: #000;
-<<<<<<< HEAD
-}
-
-a:visited {
-  color: #000;
-=======
->>>>>>> master
 }
 
 a:hover,
@@ -787,73 +777,14 @@ a:active {
 --------------------------------------------------------------*/
 
 .site-header {
-<<<<<<< HEAD
-  position: -webkit-sticky;
-  position: sticky;
-=======
   position: fixed;
   z-index: 10;
->>>>>>> master
   top: 0;
   left: 0;
   right: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-<<<<<<< HEAD
-}
-
-.site-branding {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-}
-
-.site-branding .custom-logo-link {
-  width: 128px;
-}
-
-.site-navigation {
-  flex-grow: 3;
-  flex-direction: row;
-  display: flex;
-}
-
-.site-navigation .menu-hovedmeny-container {
-  flex-grow: 1;
-}
-
-.site-navigation .nav-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: flex-end;
-  background-color: white;
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-
-@media screen and (min-width: 37.5em) {
-  .site-navigation .nav-menu {
-    display: flex;
-    flex-direction: row;
-    background-color: transparent;
-  }
-}
-
-.site-navigation.toggled .nav-menu {
-  display: flex;
-  position: absolute;
-  top: 8rem;
-  right: 0;
-  left: 0;
-  width: 100%;
-}
-
-=======
   height: 100px;
 }
 
@@ -911,7 +842,6 @@ a:active {
   width: 100%;
 }
 
->>>>>>> master
 .site-navigation .nav-menu .menu-item {
   margin-left: 1em;
 }
@@ -1139,15 +1069,130 @@ a:active {
   align-items: flex-start;
 }
 
-<<<<<<< HEAD
-=======
+.content-area .archive-content-wrapper .archive-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 50px 0;
+}
+
+.content-area .archive-content-wrapper .archive-content .post-thumbnail img {
+  box-shadow: 10px 10px 8px -10px #333333;
+}
+
+@media screen and (min-width: 1024px) {
+  .content-area .archive-content-wrapper .archive-content {
+    justify-content: center;
+    max-width: 40%;
+  }
+}
+
+.content-area .archive-content-wrapper .entry-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.content-area .archive-content-wrapper .entry-header .entry-title {
+  margin: 0;
+}
+
+.content-area .archive-content-wrapper .entry-header .entry-title a {
+  text-decoration: none;
+  color: #000;
+}
+
+.content-area .archive-content-wrapper .entry-header .entry-title a:hover {
+  color: #AE9731;
+}
+
+.content-area .archive-content-wrapper .entry-header .room-price {
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-area .archive-content-wrapper .entry-content {
+  margin: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .content-area .archive-content-wrapper article:nth-child(even) {
+    margin-top: 18em;
+  }
+}
+
+.content-area .roomFacilities {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.content-area .roomFacilities li {
+  list-style: none;
+}
+
+.content-area .roomFacilities #facilityChecked {
+  border: 1px solid #CCCCCC;
+  color: #AE9731;
+  padding: 1px 4px;
+  margin-right: 5px;
+}
+
+.content-area .room-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-area .room-btns a:hover {
+  color: black;
+}
+
+.content-area .room-btns .button-secondary {
+  background-color: #000;
+  color: white;
+}
+
+.content-area .room-btns .button-secondary:hover {
+  color: #CCCCCC;
+}
+
+.site-main {
+  padding: 0 15px;
+}
+
+.content-area {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1366px) {
+  .content-area {
+    max-width: 1000px;
+  }
+}
+
+.content-area .archive-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
 @media screen and (min-width: 1024px) {
   .content-area .archive-content-wrapper:first-child {
     margin-top: 100px;
   }
 }
 
->>>>>>> master
 .content-area .archive-content-wrapper .archive-content {
   display: flex;
   flex-direction: column;
@@ -1202,11 +1247,7 @@ a:active {
 
 @media screen and (min-width: 1024px) {
   .content-area .archive-content-wrapper article:nth-child(even) {
-<<<<<<< HEAD
-    margin-top: 18em;
-=======
     margin-top: 14em;
->>>>>>> master
   }
 }
 
@@ -1238,28 +1279,11 @@ a:active {
   color: black;
 }
 
-<<<<<<< HEAD
-.content-area .room-btns .button-secondary {
-  background-color: #000;
-  color: white;
-}
-
-.content-area .room-btns .button-secondary:hover {
-  color: #CCCCCC;
-}
-
-=======
->>>>>>> master
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
 
 .page-header {
-<<<<<<< HEAD
-  background-position: center;
-  background-size: cover;
-  padding: 1em;
-=======
   position: relative;
   padding: 0.5em 1em 1em;
 }
@@ -1285,258 +1309,10 @@ a:active {
 .page-header .page-title,
 .page-header .page-description {
   max-width: 100%;
->>>>>>> master
 }
 
 .page-header .page-title {
   margin: 0;
-<<<<<<< HEAD
-  font-size: 3.5em;
-  max-width: 30rem;
-}
-
-/*--------------------------------------------------------------
-## Contact-and-Restaurant
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-## Contact-us and Restaurant
---------------------------------------------------------------*/
-
-.page-header {
-  margin-bottom: 2em;
-}
-
-.page-header h1 {
-  color: white;
-}
-
-#kontakt-oss-main {
-  display: grid;
-  width: 80%;
-  margin: 0 auto;
-  grid-template-columns: auto auto;
-  grid-column-gap: 2em;
-  grid-row-gap: 2em;
-  grid-template-areas: "kontakt_oss  caldera" "kart   kart";
-}
-
-#kontakt-oss-main #kontakt_oss {
-  grid-area: kontakt_oss;
-}
-
-#kontakt-oss-main #caldera {
-  grid-area: caldera;
-  background-color: #ccc;
-  padding: 1em;
-}
-
-#kontakt-oss-main #caldera #fld_7908577_1 {
-  background-color: #000;
-  color: #fff;
-  padding: 1em;
-  width: 40%;
-  float: right;
-  margin-bottom: -2em;
-}
-
-#kontakt-oss-main #caldera #caldera_form_1 #fld_7908577_1:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-#kontakt-oss-main #caldera #caldera_form_1 .row {
-  display: flex;
-  flex-direction: column;
-}
-
-#kontakt-oss-main #kart {
-  grid-area: kart;
-  margin: 2em 0 2em 0;
-}
-
-@media screen and (max-width: 736px) {
-  #kontakt-oss-main {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #kontakt-oss-main #kart,
-  #kontakt-oss-main #caldera,
-  #kontakt-oss-main h2,
-  #kontakt-oss-main p {
-    width: 100%;
-  }
-
-  #kontakt-oss-main #caldera_form_1 #fld_7908577_1 {
-    float: center;
-    width: 80%;
-  }
-}
-
-/* Restaurant */
-
-#restaurant-main {
-  padding: 2em;
-  width: 80%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-auto-flow: dense;
-  grid-column-gap: 3em;
-  grid-row-gap: 3em;
-  grid-template-areas: "havnekroa_tittel openning_time" "innhold bestilling_form" "innhold ." "innhold ." "bilder  bilder" "kontakt_link  kontakt_link";
-}
-
-#restaurant-main #havnekroa_tittel {
-  grid-area: havnekroa_tittel;
-}
-
-#restaurant-main #openning_time {
-  grid-area: openning_time;
-}
-
-#restaurant-main #innhold {
-  grid-area: innhold;
-}
-
-#restaurant-main #innhold a {
-  display: inline-block;
-  background-color: #ccc;
-  color: #000;
-  padding: 0.7em;
-  margin: 0 0.5em 0.5em 0;
-  text-decoration: none;
-}
-
-#restaurant-main #innhold a:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-#restaurant-main #innhold table {
-  border: 1px dotted #ccc;
-  padding: 8px;
-}
-
-#restaurant-main #innhold table tr th {
-  text-align: left;
-  padding: 5px;
-  border: 1px dotted #ccc;
-  background-color: #ccc;
-}
-
-#restaurant-main #innhold table tr td {
-  padding: 5px;
-  text-align: left;
-  border: 1px dotted #ccc;
-}
-
-#restaurant-main #bestill-form {
-  grid-area: bestilling_form;
-  background-color: #ccc;
-  padding: 1em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#restaurant-main #bestill-form input {
-  text-align: center;
-  width: 80%;
-  padding: 0.5em;
-  margin: 0.3em;
-}
-
-#restaurant-main #bestill-form button {
-  background: #000;
-  color: #fff;
-  height: 50px;
-  font-size: 130%;
-  float: right;
-  width: 40%;
-}
-
-#restaurant-main #bestill-form button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-#restaurant-main #slide-bilder {
-  grid-area: bilder;
-}
-
-#restaurant-main #slide-bilder #n2-ss-2-arrow-previous,
-#restaurant-main #slide-bilder #n2-ss-2-arrow-next {
-  margin-bottom: -5em;
-  margin-left: 1em;
-}
-
-#restaurant-main #slide-bilder div#n2-ss-2 .n2-style-7c4ebf303396588b22743ad22672cc36-simple {
-  width: 60%;
-  float: right;
-}
-
-#restaurant-main #slide-bilder div#n2-ss-2 .n2-style-7c4ebf303396588b22743ad22672cc36-simple span {
-  display: block;
-}
-
-#restaurant-main #kontakt_link {
-  grid-area: kontakt_link;
-  background-image: url("http://havnehotellet-i-halden.local/wp-content/uploads/2019/04/hh-vin.jpg");
-  text-align: center;
-  background-repeat: no-repeat;
-  height: 300px;
-}
-
-#restaurant-main #kontakt_link h2 {
-  font-size: 200%;
-}
-
-#restaurant-main #kontakt_link a {
-  background-color: #ccc;
-  color: #000;
-  padding: 1em;
-  margin: 0 0.5em 0 0;
-  text-decoration: none;
-}
-
-#restaurant-main #kontakt_link a:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-@media screen and (max-width: 736px) {
-  #restaurant-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  #restaurant-main #innhold {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #restaurant-main #innhold a {
-    text-align: center;
-  }
-
-  #restaurant-main #bestill-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 1em;
-  }
-
-  #restaurant-main #slide-bilder {
-    margin: 1em;
-  }
-}
-
-=======
   font-size: 1.5em;
   line-height: 1;
   -webkit-hyphens: auto;
@@ -1857,6 +1633,247 @@ body.home .page-header #booking-form .form-group-submit button:focus {
 }
 
 /*--------------------------------------------------------------
+## Contact-and-Restaurant
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Contact-us and Restaurant
+--------------------------------------------------------------*/
+
+.page-header {
+  margin-bottom: 2em;
+}
+
+.page-header h1 {
+  color: white;
+}
+
+#kontakt-oss-main {
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  grid-template-columns: auto auto;
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+  grid-template-areas: "kontakt_oss  caldera" "kart   kart";
+}
+
+#kontakt-oss-main #kontakt_oss {
+  grid-area: kontakt_oss;
+}
+
+#kontakt-oss-main #caldera {
+  grid-area: caldera;
+  background-color: #ccc;
+  padding: 1em;
+}
+
+#kontakt-oss-main #caldera #fld_7908577_1 {
+  background-color: #000;
+  color: #fff;
+  padding: 1em;
+  width: 40%;
+  float: right;
+  margin-bottom: -2em;
+}
+
+#kontakt-oss-main #caldera #caldera_form_1 #fld_7908577_1:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+#kontakt-oss-main #caldera #caldera_form_1 .row {
+  display: flex;
+  flex-direction: column;
+}
+
+#kontakt-oss-main #kart {
+  grid-area: kart;
+  margin: 2em 0 2em 0;
+}
+
+@media screen and (max-width: 736px) {
+  #kontakt-oss-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #kontakt-oss-main #kart,
+  #kontakt-oss-main #caldera,
+  #kontakt-oss-main h2,
+  #kontakt-oss-main p {
+    width: 100%;
+  }
+
+  #kontakt-oss-main #caldera_form_1 #fld_7908577_1 {
+    float: center;
+    width: 80%;
+  }
+}
+
+/* Restaurant */
+
+#restaurant-main {
+  padding: 2em;
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-flow: dense;
+  grid-column-gap: 3em;
+  grid-row-gap: 3em;
+  grid-template-areas: "havnekroa_tittel openning_time" "innhold bestilling_form" "innhold ." "innhold ." "bilder  bilder" "kontakt_link  kontakt_link";
+}
+
+#restaurant-main #havnekroa_tittel {
+  grid-area: havnekroa_tittel;
+}
+
+#restaurant-main #openning_time {
+  grid-area: openning_time;
+}
+
+#restaurant-main #innhold {
+  grid-area: innhold;
+}
+
+#restaurant-main #innhold a {
+  display: inline-block;
+  background-color: #ccc;
+  color: #000;
+  padding: 0.7em;
+  margin: 0 0.5em 0.5em 0;
+  text-decoration: none;
+}
+
+#restaurant-main #innhold a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+#restaurant-main #innhold table {
+  border: 1px dotted #ccc;
+  padding: 8px;
+}
+
+#restaurant-main #innhold table tr th {
+  text-align: left;
+  padding: 5px;
+  border: 1px dotted #ccc;
+  background-color: #ccc;
+}
+
+#restaurant-main #innhold table tr td {
+  padding: 5px;
+  text-align: left;
+  border: 1px dotted #ccc;
+}
+
+#restaurant-main #bestill-form {
+  grid-area: bestilling_form;
+  background-color: #ccc;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#restaurant-main #bestill-form input {
+  text-align: center;
+  width: 80%;
+  padding: 0.5em;
+  margin: 0.3em;
+}
+
+#restaurant-main #bestill-form button {
+  background: #000;
+  color: #fff;
+  height: 50px;
+  font-size: 130%;
+  float: right;
+  width: 40%;
+}
+
+#restaurant-main #bestill-form button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+#restaurant-main #slide-bilder {
+  grid-area: bilder;
+}
+
+#restaurant-main #slide-bilder #n2-ss-2-arrow-previous,
+#restaurant-main #slide-bilder #n2-ss-2-arrow-next {
+  margin-bottom: -5em;
+  margin-left: 1em;
+}
+
+#restaurant-main #slide-bilder div#n2-ss-2 .n2-style-7c4ebf303396588b22743ad22672cc36-simple {
+  width: 60%;
+  float: right;
+}
+
+#restaurant-main #slide-bilder div#n2-ss-2 .n2-style-7c4ebf303396588b22743ad22672cc36-simple span {
+  display: block;
+}
+
+#restaurant-main #kontakt_link {
+  grid-area: kontakt_link;
+  background-image: url("http://havnehotellet-i-halden.local/wp-content/uploads/2019/04/hh-vin.jpg");
+  text-align: center;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+#restaurant-main #kontakt_link h2 {
+  font-size: 200%;
+}
+
+#restaurant-main #kontakt_link a {
+  background-color: #ccc;
+  color: #000;
+  padding: 1em;
+  margin: 0 0.5em 0 0;
+  text-decoration: none;
+}
+
+#restaurant-main #kontakt_link a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@media screen and (max-width: 736px) {
+  #restaurant-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  #restaurant-main #innhold {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #restaurant-main #innhold a {
+    text-align: center;
+  }
+
+  #restaurant-main #bestill-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+
+  #restaurant-main #slide-bilder {
+    margin: 1em;
+  }
+}
+
+/*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
 
@@ -1878,7 +1895,6 @@ body.home .page-header #booking-form .form-group-submit button:focus {
   list-style-type: none;
 }
 
->>>>>>> master
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
