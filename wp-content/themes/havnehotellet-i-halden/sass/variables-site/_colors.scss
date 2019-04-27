@@ -1,28 +1,48 @@
 // Våre farger
+<<<<<<< HEAD
 $dark: #000 ;
 $primary: #AE9731;
 $shade-dark: #333333;
 $shade-light: #CCCCCC;
+=======
+$primary: #AE9731;
+$primary-light: lighten($primary, 50%);
+$primary-dark: darken($primary, 25%);
+$accent: #3148ae;
+$accent-light: lighten($accent, 50%);
+$accent-dark: darken($accent, 25%);
+$shade-dark: #333333;
+$shade-darkest: #000;
+$shade-light: #CCCCCC;
+$shade-lightest: #fff;
+>>>>>>> master
 
 // Eksisterende variabler
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
+<<<<<<< HEAD
 $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: $dark;
 $color__link-visited: $dark;
+=======
+$color__link: $shade-darkest;
+$color__link-visited: $shade-darkest;
+>>>>>>> master
 $color__link-hover: $primary;
 $color__text-main: #404040;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
 $color__border-abbr: #666;
 
+<<<<<<< HEAD
+=======
+// $color__text-input: #666;
+// $color__text-input-focus: #111;
+// $color__border-input: #ccc;
+
+>>>>>>> master

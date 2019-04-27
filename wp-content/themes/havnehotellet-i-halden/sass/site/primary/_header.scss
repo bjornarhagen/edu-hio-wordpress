@@ -1,14 +1,315 @@
 .page-header {
-  background-position: center;
-  background-size: cover;
-  padding: 1em;
+  position: relative;
+  padding: 0.5em 1em 1em;
+
+  @media screen and (min-width: $size__small) {
+    padding: 1em 2em 2em;
+  }
+
+  @media screen and (min-width: $size__medium) {
+    padding: 1em 4em 2em;
+  }
+
+  @media screen and (min-width: $size__large) {
+    padding: 2em 8em 4em;
+  }
+
+  .page-title,
+  .page-description {
+    max-width: 100%;
+  }
 
   .page-title {
     margin: 0;
-    font-size: 3.5em;
-    max-width: 30rem;
+    font-size: 1.5em;
+    line-height: 1;
+    hyphens: auto;
+
+    @media screen and (min-width: $size__small) {
+      font-size: 2em;
+    }
+
+    @media screen and (min-width: $size__medium) {
+      font-size: 3.5em;
+    }
+
+    @media screen and (min-width: $size__large) {
+      font-size: 4.5em;
+    }
   }
 
   .page-description {
+    margin: 1em 0 0;
+  }
+
+  .page-header-overlay,
+  .page-header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .page-header-overlay {
+    z-index: 2;
+  }
+
+  .page-header-background {
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+body.home .page-header {
+  @media screen and (min-width: $size__medium) {
+    padding-bottom: 0;
+  }
+
+  .page-title,
+  .page-description {
+    max-width: 30rem;
+  }
+
+  #booking-form-wrapper {
+    position: relative;
+    margin-top: 4rem;
+
+    @media screen and (min-width: $size__small) {
+      margin-top: 8rem;
+    }
+
+    @media screen and (min-width: $size__medium) {
+      height: 4rem;
+      margin-bottom: 8rem;
+    }
+
+    .booking-form-intro-text {
+      position: relative;
+      top: -2em;
+      margin: 0;
+      line-height: 1;
+
+      > span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+        font-weight: 700;
+
+        @media screen and (min-width: $size__medium) {
+          display: inline-block;
+          max-width: 60%;
+          vertical-align: middle;
+        }
+      }
+
+      a {
+        color: currentColor;
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        margin-top: 0.4em;
+
+        @media screen and (min-width: $size__medium) {
+          margin-top: 0;
+          margin-left: 0.4em;
+        }
+
+        &:focus,
+        &:hover {
+          opacity: 0.7;
+        }
+
+        .icon {
+          width: 1em;
+          height: 1em;
+        }
+      }
+    }
+  }
+
+  #booking-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em 0 0 0;
+    color: $shade-dark;
+    background-color: $shade-lightest;
+
+    @media screen and (min-width: $size__medium) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8rem;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr 1fr;
+      grid-gap: 2em;
+      box-shadow: 0 1em 2em -1em rgba($shade-light, 1);
+    }
+
+    @media screen and (min-width: $size__large) {
+      grid-gap: 4em;
+    }
+  }
+}
+
+body.archive,
+body.search-results,
+body.error404 {
+  .page-header {
+    color: $primary-dark;
+    background-color: $primary-light;
+
+    .page-header-overlay,
+    .page-header-background {
+      display: none;
+    }
+  }
+}
+
+body.error404 {
+  .page-header {
+    color: $shade-lightest;
+    background-color: $shade-darkest;
+  }
+}
+
+body.home .page-header #booking-form {
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 2em 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    @media screen and (min-width: $size__medium) {
+      padding: 0;
+      justify-content: center;
+
+      &:first-child {
+        padding-left: 2em;
+      }
+    }
+
+    @media screen and (min-width: $size__large) {
+      &:first-child {
+        padding-left: 4em;
+      }
+    }
+
+    label {
+      font-weight: 700;
+      white-space: nowrap;
+      margin-bottom: 0.4em;
+      display: inline-flex;
+      justify-content: flex-start;
+      align-content: center;
+      align-items: center;
+    }
+
+    .input {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .input-select {
+      select {
+        width: 100%;
+      }
+    }
+
+    .input-date {
+      input {
+        width: (100%/3);
+        border-color: $shade-light;
+        border-radius: 0;
+        border-left-width: 0px;
+
+        &:first-child {
+          border-left-width: 1px;
+        }
+
+        &:hover,
+        &:focus {
+          border-top-color: $primary-dark;
+          border-bottom-color: $primary-dark;
+        }
+
+        &:first-child {
+          border-radius: 4px 0px 0px 4px;
+
+          &:hover,
+          &:focus {
+            border-left-width: 1px;
+            border-left-color: $primary-dark;
+          }
+        }
+
+        &:last-child {
+          border-radius: 0px 4px 4px 0px;
+
+          &:hover,
+          &:focus {
+            border-right-width: 1px;
+            border-right-color: $primary-dark;
+          }
+        }
+      }
+    }
+  }
+
+  .form-group-submit {
+    padding: 2em 0 0;
+
+    @media screen and (min-width: $size__medium) {
+      padding: 0 0 0 1em;
+    }
+
+    @media screen and (min-width: $size__large) {
+      padding: 0 0 0 2em;
+      padding: 0;
+    }
+
+    .input {
+      height: 100%;
+    }
+
+    input, button {
+      width: 100%;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 1em;
+      font-size: 1.33rem;
+      text-transform: uppercase;
+
+      @media screen and (min-width: $size__large) {
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      &:hover,
+      &:focus {
+        transform: scale(1.0);
+      }
+    }
   }
 }

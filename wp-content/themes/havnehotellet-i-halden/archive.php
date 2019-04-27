@@ -15,6 +15,7 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
+<<<<<<< HEAD
 			<header class="page-header">
 				<?php
 				// Sjekk om siden er custom post type
@@ -29,6 +30,8 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
+=======
+>>>>>>> master
 			<section class="archive-content-wrapper">
 			<?php
 			/* Start the Loop */
@@ -45,11 +48,15 @@ get_header();
 			endwhile;
 			?>
 			</section>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> master
 			<?php
 
 			the_posts_navigation();
-			
+
 
 		else :
 
