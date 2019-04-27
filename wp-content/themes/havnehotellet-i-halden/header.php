@@ -41,7 +41,6 @@
 			?>
 			</div><!-- .site-branding -->
 
-<<<<<<< HEAD
 	<div id="content" class="site-content">
 		<?php
 			while ( have_posts() ) :
@@ -64,7 +63,6 @@
 				<?php endif;
 			endwhile; // End of the loop.
 		?>
-=======
 			<nav id="site-navigation" class="site-navigation">
 				<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php esc_html_e('Meny', 'havnehotellet-i-halden'); ?></button>
 				<?php
@@ -78,4 +76,4 @@
 
 		<div id="content" class="site-content">
 			<?php require_once('inc/custom-header.php'); ?>
->>>>>>> master
+
