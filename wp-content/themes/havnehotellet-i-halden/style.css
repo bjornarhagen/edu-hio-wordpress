@@ -1644,10 +1644,6 @@ body.home .page-header #booking-form .form-group-submit button:focus {
   margin-bottom: 2em;
 }
 
-.page-header h1 {
-  color: white;
-}
-
 #kontakt-oss-main {
   display: grid;
   width: 80%;
@@ -1722,7 +1718,7 @@ body.home .page-header #booking-form .form-group-submit button:focus {
   grid-auto-flow: dense;
   grid-column-gap: 3em;
   grid-row-gap: 3em;
-  grid-template-areas: "havnekroa_tittel openning_time" "innhold bestilling_form" "innhold ." "innhold ." "bilder  bilder" "kontakt_link  kontakt_link";
+  grid-template-areas: "havnekroa_tittel havnekroa_tittel openning_time" "innhold innhold bestilling_form" "innhold innhold ." "bilder bilder bilder" "kontakt_link kontakt_link kontakt_link";
 }
 
 #restaurant-main #havnekroa_tittel {
@@ -1746,27 +1742,33 @@ body.home .page-header #booking-form .form-group-submit button:focus {
   text-decoration: none;
 }
 
-#restaurant-main #innhold a:hover {
+#restaurant-main #innhold a:hover,
+#restaurant-main #innhold a:focus,
+#restaurant-main #innhold a:active {
   background-color: #000;
   color: #fff;
 }
 
+#restaurant-main #innhold a:hover,
+#restaurant-main #innhold a:active {
+  outline: 0;
+}
+
 #restaurant-main #innhold table {
   border: 1px dotted #ccc;
-  padding: 8px;
+  font-size: 75%;
 }
 
 #restaurant-main #innhold table tr th {
   text-align: left;
-  padding: 5px;
   border: 1px dotted #ccc;
   background-color: #ccc;
 }
 
 #restaurant-main #innhold table tr td {
-  padding: 5px;
   text-align: left;
   border: 1px dotted #ccc;
+  padding: 0;
 }
 
 #restaurant-main #bestill-form {

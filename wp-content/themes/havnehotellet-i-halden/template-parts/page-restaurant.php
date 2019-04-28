@@ -7,8 +7,9 @@
 ?>
  <?php get_header(); ?>
 
-    <main id="restaurant-main">
+    <main id="restaurant-main" role="main">
         <?php havnehotellet_i_halden_post_thumbnail(); ?>
+        
         <div id="havnekroa_tittel"> 
             <h2>  <?php the_field('header_felt');?> </h2>
             <p> <?php the_field('beskrivelse_felt');?> </p>       
@@ -17,15 +18,11 @@
             <p> <?php the_field('openning_time_felt');?> </p>       
         </div>
         <div id="innhold">
-            <a href="<?php echo esc_url( get_permalink(get_page_by_title('Se meny'))); ?>"> Se meny</a> 
+            <a href="<?php echo get_post_type_archive_link('meal'); ?>"> Se meny</a> 
             <a href="<?php echo esc_url( get_permalink(get_page_by_title('Bilde galleri'))); ?>">Bilde galleri</a>
             <a href="<?php echo esc_url( get_permalink(get_page_by_title('Se mer informasjon'))); ?>"> Se mer informasjon </a>
             <p> <?php the_field('innhold_felt');?></p>
         </div>
-
-        <div id="">
-
-        </div> 
 
         <form action="" id="bestill-form" method="post">
             <h2>Reserver et bord </h2>

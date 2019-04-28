@@ -20,29 +20,12 @@
 			else :
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
-
-			$price = get_field('room-price');
-			if($price) {
-				echo '<p class="room-price">NOK ' . $price . ',-</p>';
-			}
-
 			
 		?>
 	</header><!-- .entry-header -->
 	
 	<div class="entry-content">
 		<?php
-		
-		$facilities = get_field('room-facilities');
-		if($facilities) {
-			echo '<ul class="roomFacilities">';
-
-			foreach($facilities as $value) {
-				echo '<li><span id="facilityChecked">&times;</span>'. $value . '</li>';
-			}
-
-			echo '</ul>';
-		}
 
 		the_content( sprintf(
 			wp_kses(
@@ -62,16 +45,4 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-	<section class="room-btns">
-		<?php 
-		$classes = get_body_class();
-		
-		if (!in_array('single-room',$classes)) {
-			echo '<a href="'.esc_url( get_permalink() ).'" class="button">Les mer</a>';
-		}
-
-		?>
-		
-		<a href="#" class="button button-secondary">Book nå</a>
-	</section>
 </article><!-- #post-<?php the_ID(); ?> -->
