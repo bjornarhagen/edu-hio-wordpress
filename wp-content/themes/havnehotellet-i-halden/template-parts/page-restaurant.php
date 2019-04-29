@@ -26,11 +26,11 @@
 
         <form action="" id="bestill-form" method="post">
             <h2>Reserver et bord </h2>
-            <input type="text" name="kort_id"  placeholder="Kort id" required>
-            <input type="date" name="text" placeholder="Dato" required> 
-            <input type="text" name="personer" placeholder="2 Personer" required>
-            <input type="time" name="time" placeholder="Time" required>
-            <button type="submit">Bestill</button>
+            <input class="bestill-bord-input" type="text" name="kort_id"  placeholder="Kort id" required>
+            <input class="bestill-bord-input" type="date" name="text" placeholder="Dato" required> 
+            <input class="bestill-bord-input" type="text" name="personer" placeholder="2 Personer" required>
+            <input class="bestill-bord-input" type="time" name="time" placeholder="Time" required>
+            <button id="bestill-bord-btn" type="submit">Bestill</button>
         </form>
            
         <div id="slide-bilder">
