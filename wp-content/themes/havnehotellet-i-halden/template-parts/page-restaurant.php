@@ -18,10 +18,12 @@
             <p> <?php the_field('openning_time_felt');?> </p>       
         </div>
         <div id="innhold">
-            <a href="<?php echo get_post_type_archive_link('meal'); ?>"> Se meny</a> 
+            <a href="<?php echo esc_url( get_permalink(get_page_by_title('Meals'))); ?>">Se meny</a>
             <a href="<?php echo esc_url( get_permalink(get_page_by_title('Bilde galleri'))); ?>">Bilde galleri</a>
             <a href="<?php echo esc_url( get_permalink(get_page_by_title('Se mer informasjon'))); ?>"> Se mer informasjon </a>
-            <p> <?php the_field('innhold_felt');?></p>
+            
+            <?php the_content(); ?>
+            <?php the_field('innhold_felt'); ?>
         </div>
 
         <form action="" id="bestill-form" method="post">
