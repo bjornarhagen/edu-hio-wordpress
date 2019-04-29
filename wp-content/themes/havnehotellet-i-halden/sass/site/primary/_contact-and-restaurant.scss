@@ -20,11 +20,11 @@
     }
     #caldera {
       grid-area: caldera;
-      background-color: #ccc;
+      background-color: $color__background-hr;
       padding: 1em;
       #fld_7908577_1 {
-        background-color: #000;
-        color: #fff;
+        background-color: $shade-darkest;
+        color: $shade-lightest;
         padding: 1em;
         width: 40%;
         float: right;
@@ -32,8 +32,8 @@
       }
       
       #caldera_form_1 #fld_7908577_1:hover {
-        background-color: #fff;
-        color:#000;
+        background-color: $shade-lightest;
+        color:$shade-darkest;
       }
       
       #caldera_form_1 .row {
@@ -92,14 +92,14 @@
         grid-area: innhold;
         a {
           display:inline-block;
-          background-color:#ccc;
-          color: #000;
+          background-color:$color__background-hr;
+          color: $shade-darkest;
           padding: 0.7em;
           margin:0 0.5em 0.5em 0;
           text-decoration: none;
           &:hover, &:focus, &:active {
-            background-color: #000;
-            color: #fff;
+            background-color: $shade-darkest;
+            color: $shade-lightest;
           }
           &:hover,
           &:active {
@@ -109,50 +109,28 @@
         
        
         table {
-          border: 1px dotted #ccc;
+          border: 1px dotted $color__background-hr;
           font-size: 75%; 
         }
         table tr th {
             text-align: left; 
-            border: 1px dotted #ccc;
-            background-color: #ccc;
+            border: 1px dotted $color__background-hr;
+            background-color:$color__background-hr;
         }
         table tr td {
             text-align: left; 
-            border: 1px dotted #ccc;
+            border: 1px dotted $color__background-hr;
             padding: 0;
         }
         
      }
      #bestill-form {
         grid-area: bestilling_form;
-        background-color: #ccc;
+        background-color: $color__background-hr;
         padding: 1em;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-
-        input {
-          text-align: center;
-          width: 80%; 
-          padding: 0.5em;
-          margin: 0.3em;
-        }
-        
-        button {
-          background: #000;
-          color: #fff;
-          height: 50px;
-          font-size: 130%;
-          float: right;
-          width: 40%;
-        }
-        
-        button:hover {
-          background-color: #fff;
-          color: #000;
-        }
-          
       }  
       #slide-bilder {
         grid-area: bilder;
@@ -181,16 +159,16 @@
           font-size: 200%;
         }
         a {
-          background-color:  #ccc;
-          color: #000;
+          background-color:  $color__background-hr;
+          color: $shade-darkest;
           padding: 1em;
           margin:0 0.5em 0 0;
           text-decoration: none;
         }
         
         a:hover {
-          background-color: #000;
-          color: #fff;
+          background-color: $shade-darkest;
+          color: $shade-lightest;
         }
         
       }

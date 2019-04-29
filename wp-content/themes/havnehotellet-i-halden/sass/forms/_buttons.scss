@@ -56,3 +56,16 @@ a.button-secondary {
 		@include hih-button-shadow($shade-dark);
 	}
 }
+#bestill-bord-btn {
+	background: #000;
+	color: #fff;
+	height: 50px;
+	font-size: 130%;
+	float: right;
+	width: 40%;
+  }
+  
+  #bestill-bord-btn:hover {
+	background-color: #fff;
+	color: #000;
+  }

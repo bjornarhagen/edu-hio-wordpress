@@ -678,6 +678,20 @@ a.button-secondary:focus {
   box-shadow: 0 0.6em 0.6em -0.4em rgba(51, 51, 51, 0.33);
 }
 
+#bestill-bord-btn {
+  background: #000;
+  color: #fff;
+  height: 50px;
+  font-size: 130%;
+  float: right;
+  width: 40%;
+}
+
+#bestill-bord-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 input[type=text],
 input[type=email],
 input[type=url],
@@ -743,6 +757,13 @@ select:hover {
 textarea {
   width: 100%;
   resize: vertical;
+}
+
+.bestill-bord-input {
+  text-align: center;
+  width: 80%;
+  padding: 0.5em;
+  margin: 0.3em;
 }
 
 /*--------------------------------------------------------------
@@ -1778,27 +1799,6 @@ body.home .page-header #booking-form .form-group-submit button:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-#restaurant-main #bestill-form input {
-  text-align: center;
-  width: 80%;
-  padding: 0.5em;
-  margin: 0.3em;
-}
-
-#restaurant-main #bestill-form button {
-  background: #000;
-  color: #fff;
-  height: 50px;
-  font-size: 130%;
-  float: right;
-  width: 40%;
-}
-
-#restaurant-main #bestill-form button:hover {
-  background-color: #fff;
-  color: #000;
 }
 
 #restaurant-main #slide-bilder {
