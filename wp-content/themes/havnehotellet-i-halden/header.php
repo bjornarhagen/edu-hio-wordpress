@@ -8,7 +8,6 @@
  *
  * @package Havnehotellet_i_Halden
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -41,28 +40,6 @@
 			?>
 			</div><!-- .site-branding -->
 
-	<div id="content" class="site-content">
-		<?php
-			while ( have_posts() ) :
-				the_post();
-
-				$header_display = get_field('header_display');
-				$header_heading = get_field('header_heading');
-				$header_text = get_field('header_text');
-
-				// Get regular page title as fallback
-				if (empty($header_heading) && is_singular()):
-					$header_heading = get_the_title();
-				endif;
-
-				if (!empty($header_display)): ?>
-					<header class="page-header">
-						<h1 class="page-title entry-title"><?= $header_heading ?></h1>
-						<p class="page-description"><?= $header_text ?></p>
-					</header>
-				<?php endif;
-			endwhile; // End of the loop.
-		?>
 			<nav id="site-navigation" class="site-navigation">
 				<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php esc_html_e('Meny', 'havnehotellet-i-halden'); ?></button>
 				<?php
@@ -76,4 +53,3 @@
 
 		<div id="content" class="site-content">
 			<?php require_once('inc/custom-header.php'); ?>
-
