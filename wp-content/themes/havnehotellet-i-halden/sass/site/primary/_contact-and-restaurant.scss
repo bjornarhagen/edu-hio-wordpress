@@ -22,20 +22,7 @@
       grid-area: caldera;
       background-color: $color__background-hr;
       padding: 1em;
-      #fld_7908577_1 {
-        background-color: $shade-darkest;
-        color: $shade-lightest;
-        padding: 1em;
-        width: 40%;
-        float: right;
-        margin-bottom: -2em;
-      }
-      
-      #caldera_form_1 #fld_7908577_1:hover {
-        background-color: $shade-lightest;
-        color:$shade-darkest;
-      }
-      
+            
       #caldera_form_1 .row {
         display: flex;
         flex-direction: column;
