@@ -346,7 +346,7 @@ if (!function_exists('havnehotellet_i_halden_setup')) :
 		if($meal_query->have_posts()):
 			while($meal_query->have_posts()) : $meal_query->the_post();
 				$custom = get_post_custom( get_the_ID() );
-				echo "<p>".get_the_title()."</p>";
+				echo "<h2>".get_the_title()."</h2>";
 				echo "<p>".get_the_content()."</p>"; 
 			endwhile;
 			wp_reset_postdata();
