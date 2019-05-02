@@ -69,7 +69,7 @@
 				<option value="<?= $max_year ?>"></option>
 			</datalist>
 
-			<form id="booking-form" action="" method="get">
+			<form id="booking-form" action="<?= $booking_form_url ?>" method="get">
 				<div class="form-group form-group-line">
 					<label for="">
 						<?= get_icon('calendar') ?>

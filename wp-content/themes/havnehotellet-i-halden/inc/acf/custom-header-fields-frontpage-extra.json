@@ -36,6 +36,25 @@
           "id": ""
         },
         "return_format": "array"
+      },
+      {
+        "key": "field_form_action_url",
+        "label": "Booking skjema url",
+        "name": "booking_form_url",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "https://itstud.hiof.no/uinv19/uinv19gr2/bjornar/funksjon/hoteller/havnehotellet-i-halden/booking/steg-2",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
       }
     ],
     "location": [
