@@ -8,6 +8,7 @@
  *
  * @package Havnehotellet_i_Halden
  */
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
