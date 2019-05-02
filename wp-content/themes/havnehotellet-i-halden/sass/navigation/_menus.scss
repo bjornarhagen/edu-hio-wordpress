@@ -33,7 +33,18 @@
 		align-items: center;
 
 		.custom-logo-link {
-			width: 128px;
+			display: block;
+			width: auto;
+			height: 2em;
+
+			@media screen and (min-width: $size__small) {
+				height: 3em;
+			}
+
+			img {
+				height: 100%;
+				width: auto;
+			}
 		}
 	}
 }
@@ -79,12 +90,9 @@
 					text-decoration: underline;
 				}
 
-				@media screen and (min-width: $size__small) {
+				@media screen and (min-width: $size__large) {
 					padding: 1em 2em;
 				}
-			}
-
-			@media screen and (min-width: $size__medium) {
 			}
 		}
 	}
