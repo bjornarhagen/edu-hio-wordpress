@@ -21,3 +21,78 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+body.page {
+	margin: 0;
+}
+
+body.home #main > article {
+	margin: 0;
+}
+
+.frontpage-rooms-block {
+	margin: 0 auto 2em;
+
+	h2 {
+		font-size: 2em;
+	}
+}
+
+.frontpage-what-you-need {
+	margin: 2em auto;
+	color: #000;
+
+	@media screen and (min-width: $size__medium) {
+		margin: 4em auto;
+	}
+
+	@media screen and (min-width: $size__large) {
+		margin: 8em auto;
+		padding: 8em 4em;
+		background-color: $shade-lightest;
+		background-attachment: fixed;
+		background-size: cover;
+		background-image: url("https://itstud.hiof.no/uinv19/uinv19gr2/wp-content/themes/havnehotellet-i-halden/images/havnehotellet-i-halden.jpg");
+	}
+
+	h2 {
+		font-size: 2.5em;
+
+		@media screen and (min-width: $size__large) {
+			margin-top: -4em;
+			margin-bottom: 2em;
+		}
+	}
+
+	> .wp-block-column {
+		width: 100%;
+		flex-basis: 100%;
+		margin: 0;
+
+		.wp-block-column:last-child {
+			flex-basis: 0%;
+
+			@media screen and (min-width: $size__large) {
+				flex-basis: 20%;
+			}
+		}
+	}
+}
+
+.frontpage-restaurant {
+	h2 {
+		font-size: 3em;
+	}
+}
+
+.frontpage-we-help {
+	margin: 4em auto 0;
+
+	> .wp-block-column {
+		width: 100%;
+		flex-basis: 100%;
+		margin: 0;
+		padding: 8em 4em;
+		background-color: $shade-lightest;
+	}
+}

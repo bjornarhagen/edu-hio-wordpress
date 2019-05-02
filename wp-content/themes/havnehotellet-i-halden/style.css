@@ -584,12 +584,13 @@ input[type=button],
 input[type=reset],
 input[type=submit],
 .button,
-a.button {
+a.button,
+.wp-block-button .wp-block-button__link {
   cursor: pointer;
   display: inline-block;
   color: #f8f5e6;
   background-color: #ae9731;
-  padding: 0.4em 0.8em;
+  padding: 0.8em 1.2em;
   text-decoration: none;
   border-radius: 4px;
   border: 2px solid #ae9731;
@@ -612,7 +613,9 @@ input[type=submit]:focus,
 .button:hover,
 .button:focus,
 a.button:hover,
-a.button:focus {
+a.button:focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus {
   color: #4b4115;
   border: 2px solid #f8f5e6;
   text-decoration: none;
@@ -626,7 +629,8 @@ input[type=button]:focus,
 input[type=reset]:focus,
 input[type=submit]:focus,
 .button:focus,
-a.button:focus {
+a.button:focus,
+.wp-block-button .wp-block-button__link:focus {
   outline: none;
 }
 
@@ -635,14 +639,16 @@ input[type=button]:active,
 input[type=reset]:active,
 input[type=submit]:active,
 .button:active,
-a.button:active {
+a.button:active,
+.wp-block-button .wp-block-button__link:active {
   transition-duration: 50ms;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
 .button-secondary,
-a.button-secondary {
+a.button-secondary,
+.wp-block-button .wp-block-button__link {
   color: #fff;
   border-color: #000;
   background-color: #000;
@@ -652,7 +658,9 @@ a.button-secondary {
 .button-secondary:hover,
 .button-secondary:focus,
 a.button-secondary:hover,
-a.button-secondary:focus {
+a.button-secondary:focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus {
   color: #333333;
   border-color: #cccccc;
   background-color: #cccccc;
@@ -1212,6 +1220,87 @@ body.home #masthead.scrolled-past-point .menu-toggle {
   margin: 0 0 1.5em;
 }
 
+body.page {
+  margin: 0;
+}
+
+body.home #main > article {
+  margin: 0;
+}
+
+.frontpage-rooms-block {
+  margin: 0 auto 2em;
+}
+
+.frontpage-rooms-block h2 {
+  font-size: 2em;
+}
+
+.frontpage-what-you-need {
+  margin: 2em auto;
+  color: #000;
+}
+
+@media screen and (min-width: 800px) {
+  .frontpage-what-you-need {
+    margin: 4em auto;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .frontpage-what-you-need {
+    margin: 8em auto;
+    padding: 8em 4em;
+    background-color: #fff;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("https://itstud.hiof.no/uinv19/uinv19gr2/wp-content/themes/havnehotellet-i-halden/images/havnehotellet-i-halden.jpg");
+  }
+}
+
+.frontpage-what-you-need h2 {
+  font-size: 2.5em;
+}
+
+@media screen and (min-width: 1366px) {
+  .frontpage-what-you-need h2 {
+    margin-top: -4em;
+    margin-bottom: 2em;
+  }
+}
+
+.frontpage-what-you-need > .wp-block-column {
+  width: 100%;
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.frontpage-what-you-need > .wp-block-column .wp-block-column:last-child {
+  flex-basis: 0%;
+}
+
+@media screen and (min-width: 1366px) {
+  .frontpage-what-you-need > .wp-block-column .wp-block-column:last-child {
+    flex-basis: 20%;
+  }
+}
+
+.frontpage-restaurant h2 {
+  font-size: 3em;
+}
+
+.frontpage-we-help {
+  margin: 4em auto 0;
+}
+
+.frontpage-we-help > .wp-block-column {
+  width: 100%;
+  flex-basis: 100%;
+  margin: 0;
+  padding: 8em 4em;
+  background-color: #fff;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1228,19 +1317,28 @@ body.home #masthead.scrolled-past-point .menu-toggle {
 ## Archive
 --------------------------------------------------------------*/
 
-.site-main {
-  padding: 0 15px;
-}
-
 .content-area {
   width: 100%;
-  max-width: 768px;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 0 1em;
+}
+
+@media screen and (min-width: 400px) {
+  .content-area {
+    padding: 0 2em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .content-area {
+    padding: 0 4em;
+  }
 }
 
 @media screen and (min-width: 1366px) {
   .content-area {
-    max-width: 1000px;
+    padding: 0 8em;
   }
 }
 
@@ -2212,5 +2310,61 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+.frontpage-slider-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 300px;
+}
+
+.frontpage-slider-gallery .blocks-gallery-item {
+  flex-shrink: 1;
+}
+
+.frontpage-slider-gallery .blocks-gallery-item figcaption {
+  text-align: right;
+}
+
+.frontpage-slider-gallery .blocks-gallery-item:first-child {
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.frontpage-slider-gallery ~ .icon {
+  cursor: pointer;
+  font-size: 2em;
+  color: #333333;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 0.5em 1em -0.5em rgba(51, 51, 51, 0.33);
+  top: -1.5em;
+}
+
+.frontpage-slider-gallery ~ .icon:last-of-type {
+  left: 1em;
+}
+
+@media screen and (min-width: 800px) {
+  .frontpage-slider-gallery ~ .icon:first-of-type {
+    top: -2em;
+    left: -1em;
+  }
+
+  .frontpage-slider-gallery ~ .icon:last-of-type {
+    top: -1em;
+    left: -1.55em;
+  }
+}
+
+.frontpage-slider-gallery ~ .icon:hover {
+  color: #4b4115;
+  background-color: #f8f5e6;
+  box-shadow: 0 0.5em 1em -0.5em rgba(75, 65, 21, 0.33);
 }
 
