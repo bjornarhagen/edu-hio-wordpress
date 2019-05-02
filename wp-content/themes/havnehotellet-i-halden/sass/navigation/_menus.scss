@@ -1,12 +1,12 @@
 #masthead {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	height: $size__site-navigation;
 	padding: 1em;
 	background-color: $color__background-nav;
@@ -39,34 +39,35 @@
 }
 
 #site-navigation {
-  flex-grow: 3;
-  flex-direction: row;
+	flex-grow: 3;
+	flex-direction: row;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 	align-content: center;
 
-  .menu-hovedmeny-container {
-    flex-grow: 1;
-  }
+	.menu-hovedmeny-container {
+		flex-grow: 1;
+	}
 
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: $color__background-nav;
-    padding: 0;
-    list-style: none;
-    margin: 0;
+	.nav-menu {
+		display: none;
+		flex-direction: column;
+		justify-content: flex-start;
+		background-color: $color__background-nav;
+		padding: 0;
+		list-style: none;
+		margin: 0;
 
-    @media screen and (min-width: $size__medium) {
-      display: flex;
-      flex-direction: row;
-      background-color: transparent;
+		@media screen and (min-width: $size__medium) {
+			display: flex;
+			flex-direction: row;
+			background-color: transparent;
 		}
 
-		.page_item {
+		.menu-item {
 			a {
+				display: block;
 				padding: 1em;
 				color: $color__nav-link;
 				transition: color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -77,10 +78,10 @@
 					color: $color__nav-link-active;
 					text-decoration: underline;
 				}
-			}
 
-			@media screen and (min-width: $size__small) {
-				padding: 1em 2em;
+				@media screen and (min-width: $size__small) {
+					padding: 1em 2em;
+				}
 			}
 
 			@media screen and (min-width: $size__medium) {
@@ -104,21 +105,21 @@
 		}
 	}
 
-  &.toggled .nav-menu {
+	&.toggled .nav-menu {
 		z-index: 2;
 		display: flex;
 		position: absolute;
 		border-top: 1px solid $primary;
-    top: $size__site-navigation;
-    right: 0;
-    left: 0;
-    width: 100%;
-  }
+		top: $size__site-navigation;
+		right: 0;
+		left: 0;
+		width: 100%;
+	}
 
-  //   .current_page_item > a,
-  //   .current-menu-item > a,
-  //   .current_page_ancestor > a,
-  //   .current-menu-ancestor > a {
+	//   .current_page_item > a,
+	//   .current-menu-item > a,
+	//   .current_page_ancestor > a,
+	//   .current-menu-ancestor > a {
 	//   }
 
 	.menu-toggle {
@@ -177,9 +178,8 @@
 
 // Offset page from the fixed nav
 #page-navigation-padding {
-  padding-top: $size__site-navigation;
+	padding-top: $size__site-navigation;
 }
-
 
 body.home #masthead {
 	background-color: $color__background-nav_fp;
@@ -203,7 +203,7 @@ body.home #masthead {
 	// }
 
 	@media screen and (min-width: $size__medium) {
-		#site-navigation .nav-menu .page_item a {
+		#site-navigation .nav-menu .menu-item a {
 			color: $color__nav_fp-link;
 
 			&:hover,
@@ -235,7 +235,7 @@ body.home #masthead.scrolled-past-point {
 	// }
 
 	@media screen and (min-width: $size__medium) {
-		#site-navigation .nav-menu .page_item a {
+		#site-navigation .nav-menu .menu-item a {
 			color: $color__nav-link;
 
 			&:hover,
@@ -249,19 +249,19 @@ body.home #masthead.scrolled-past-point {
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-  .site-main & {
-    margin: 0 0 1.5em;
-    overflow: hidden;
-  }
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
 
-  .nav-previous {
-    float: left;
-    width: 50%;
-  }
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
 
-  .nav-next {
-    float: right;
-    text-align: right;
-    width: 50%;
-  }
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
 }

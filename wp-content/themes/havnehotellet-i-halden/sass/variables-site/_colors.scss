@@ -1,5 +1,5 @@
 // Våre farger
-$primary: #AE9731;
+$primary: #ae9731;
 $primary-light: lighten($primary, 50%);
 $primary-dark: darken($primary, 25%);
 $accent: #3148ae;
@@ -7,18 +7,18 @@ $accent-light: lighten($accent, 50%);
 $accent-dark: darken($accent, 25%);
 $shade-dark: #333333;
 $shade-darkest: #000;
-$shade-light: #CCCCCC;
+$shade-light: #cccccc;
 $shade-lightest: #fff;
 
 // Nav
 $color__nav-link: #000;
-$color__nav-link-active: #f00;
+$color__nav-link-active: $primary;
 $color__background-nav: #fff;
 $color__background-nav-backdrop: rgba(#000, 0.5);
 
 // Nav - front-page
 $color__nav_fp-link: #fff;
-$color__nav_fp-link-active: #f00;
+$color__nav_fp-link-active: $primary;
 $color__background-nav_fp: rgba(#fff, 0);
 $color__background-nav_fp-backdrop: rgba(#000, 0.5);
 
@@ -40,4 +40,3 @@ $color__border-abbr: #666;
 // $color__text-input: #666;
 // $color__text-input-focus: #111;
 // $color__border-input: #ccc;
-
