@@ -64,6 +64,7 @@ if (function_exists('get_field') && !empty(get_field('header_display'))) :
     // Get special front-page header fields
     set_query_var('booking_info_text', get_field('booking_info_text'));
     set_query_var('booking_info_link', get_field('booking_info_link'));
+    set_query_var('booking_form_url', get_field('booking_form_url'));
 
     get_template_part('template-parts/header', 'front_page');
   else :
