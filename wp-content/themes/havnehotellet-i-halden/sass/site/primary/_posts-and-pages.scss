@@ -52,7 +52,7 @@ body.home #main > article {
 		background-color: $shade-lightest;
 		background-attachment: fixed;
 		background-size: cover;
-		background-image: url("https://itstud.hiof.no/uinv19/uinv19gr2/wp-content/themes/havnehotellet-i-halden/images/havnehotellet-i-halden.jpg");
+		background-image: url("https://itstud.hiof.no/uinv19/uinv19gr2/wp-content/themes/havnehotellet-i-halden/images/ocean.jpg");
 	}
 
 	h2 {
@@ -95,4 +95,9 @@ body.home #main > article {
 		padding: 8em 4em;
 		background-color: $shade-lightest;
 	}
+}
+
+#kart {
+	border: 0;
+	margin: 4em auto;
 }

@@ -290,7 +290,7 @@ if (!function_exists('havnehotellet_i_halden_setup')) :
 				'show_ui'               => true,
 				'show_in_menu'          => true,
 				'menu_position'         => 5,
-				'menu_icon'             => get_stylesheet_directory_uri() . '/icons/coffee.svg',
+				'menu_icon'             => get_stylesheet_directory_uri() . '/icons/admin-restaurant.svg',
 				'show_in_admin_bar'     => true,
 				'show_in_nav_menus'     => true,
 				'can_export'            => true,

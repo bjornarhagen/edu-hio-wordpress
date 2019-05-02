@@ -85,7 +85,7 @@
 	.coordinates {
 		display: block;
 		margin-top: 0.5em;
-		color: $shade-dark;
+		color: mix($shade-dark, $shade-light);
 	}
 
 	#menu-footer-secondary {
@@ -125,7 +125,15 @@
 
 		@media screen and (min-width: $size__medium) {
 			margin-right: auto;
+			width: 50%;
 		}
+	}
+
+	.admin {
+		display: block;
+		width: 100%;
+		margin: 2em auto;
+		text-align: right;
 	}
 
 	.credit,
@@ -135,5 +143,11 @@
 		@media screen and (min-width: $size__medium) {
 			margin-left: auto;
 		}
+	}
+
+	.credit a:hover,
+	.credit a:focus {
+		color: $shade-lightest;
+		text-decoration: underline;
 	}
 }

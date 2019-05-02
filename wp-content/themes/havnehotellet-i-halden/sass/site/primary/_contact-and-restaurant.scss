@@ -1,188 +1,195 @@
-
 /*--------------------------------------------------------------
 ## Contact-us and Restaurant
 --------------------------------------------------------------*/
 
-.page-header{
-    margin-bottom: 2em;
+.page-header {
+	margin-bottom: 2em;
 }
-  
-  #kontakt-oss-main {
-    display: grid;
-    width: 80%;
-    margin: 0 auto;
-    grid-template-columns: auto auto;
-    grid-column-gap: 2em;
-    grid-row-gap: 2em;
-    grid-template-areas: "kontakt_oss  caldera"  "kart   kart";
-    #kontakt_oss{
-      grid-area: kontakt_oss;
-    }
-    #caldera {
-      grid-area: caldera;
-      background-color: $color__background-hr;
-      padding: 1em;
-            
-      #caldera_form_1 .row {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  
-    #kart {
-      grid-area: kart;
-      margin: 2em 0 2em 0;
-    }
-  }
-  
-  
-  @media screen and (max-width: 736px) {
-    #kontakt-oss-main{
-      display: flex;
-      flex-direction: column;
-      #kart, #caldera,
-      h2, p {
-        width: 100%;
-      }
-      #caldera_form_1 #fld_7908577_1{
-          float:center;
-          width: 80%;
-      }
-    }
-  }
-  
-  /* Restaurant */
-#restaurant-main {
-    padding: 2em;
-    width: 80%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-auto-flow: dense;
-    grid-column-gap: 3em;
-    grid-row-gap: 3em;
-    grid-template-areas: 
-          "havnekroa_tittel havnekroa_tittel openning_time"
-          "innhold innhold bestilling_form"
-          "innhold innhold ."
 
-          "bilder bilder bilder"
-          "kontakt_link kontakt_link kontakt_link";
-  
-      #havnekroa_tittel{
-        grid-area: havnekroa_tittel;
-      }
-      #openning_time{
-        grid-area: openning_time;
-      }
-     #innhold{
-        grid-area: innhold;
-        a {
-          display:inline-block;
-          background-color:$color__background-hr;
-          color: $shade-darkest;
-          padding: 0.7em;
-          margin:0 0.5em 0.5em 0;
-          text-decoration: none;
-          &:hover, &:focus, &:active {
-            background-color: $shade-darkest;
-            color: $shade-lightest;
-          }
-          &:hover,
-          &:active {
-            outline: 0;
-          }
-        }
-        
-       
-        table {
-          border: 1px dotted $color__background-hr;
-          font-size: 75%; 
-        }
-        table tr th {
-            text-align: left; 
-            border: 1px dotted $color__background-hr;
-            background-color:$color__background-hr;
-        }
-        table tr td {
-            text-align: left; 
-            border: 1px dotted $color__background-hr;
-            padding: 0;
-        }
-        
-     }
-     #bestill-form {
-        grid-area: bestilling_form;
-        background-color: $color__background-hr;
-        padding: 1em;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }  
-      #slide-bilder {
-        grid-area: bilder;
-        
-        #n2-ss-2-arrow-previous,#n2-ss-2-arrow-next{
-          margin-bottom: -5em;
-          margin-left: 1em;
-        }
-       
-        div#n2-ss-2 .n2-style-65dd15db09e3391d026b2db58e63ea50-simple{
-            width: 60%;
-            float: right;
-            span{
-              display: block;
-            }
-        } 
-      }  
+#kontakt-oss-main {
+	display: grid;
+	width: 80%;
+	margin: 0 auto;
+	grid-template-columns: auto auto;
+	grid-column-gap: 2em;
+	grid-row-gap: 2em;
+	grid-template-areas: "kontakt_oss  caldera" "kart   kart";
+	#kontakt_oss {
+		grid-area: kontakt_oss;
+	}
+	#caldera {
+		grid-area: caldera;
+		background-color: $color__background-hr;
+		padding: 1em;
 
-      #kontakt_link{
-        grid-area: kontakt_link;
-        background-image: url("/uinv19/uinv19gr2/wp-content/uploads/2019/05/hh-vin.jpg");
-        text-align: center;
-        background-repeat: no-repeat;
-        height: 300px;
-        h2{
-          font-size: 200%;
-        }
-        a {
-          background-color:  $color__background-hr;
-          color: $shade-darkest;
-          padding: 1em;
-          margin:0 0.5em 0 0;
-          text-decoration: none;
-        }
-        
-        a:hover {
-          background-color: $shade-darkest;
-          color: $shade-lightest;
-        }
-        
-      }
+		#caldera_form_1 .row {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	#kart {
+		grid-area: kart;
+		margin: 2em 0 2em 0;
+	}
 }
-   
+
 @media screen and (max-width: 736px) {
-    #restaurant-main {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 100%;
-      #innhold{
-        display:flex;
-        flex-direction: column;
-        a{
-          text-align: center;
-        }
-      }
-      #bestill-form {
-        display: flex;
-        flex-direction: column;
-        width:100%;
-        justify-content: center;
-        margin-bottom: 1em;
-      }
-      #slide-bilder{
-        margin: 1em;
-      }
-    }
+	#kontakt-oss-main {
+		display: flex;
+		flex-direction: column;
+		#kart,
+		#caldera,
+		h2,
+		p {
+			width: 100%;
+		}
+		#caldera_form_1 #fld_7908577_1 {
+			float: center;
+			width: 80%;
+		}
+	}
+}
+
+/* Restaurant */
+#restaurant-main {
+	padding: 2em;
+	width: 80%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-auto-flow: dense;
+	grid-column-gap: 3em;
+	grid-row-gap: 3em;
+	grid-template-areas:
+		"havnekroa_tittel havnekroa_tittel openning_time"
+		"innhold innhold bestilling_form"
+		"innhold innhold ."
+		"bilder bilder bilder"
+		"kontakt_link kontakt_link kontakt_link";
+
+	#havnekroa_tittel {
+		grid-area: havnekroa_tittel;
+	}
+	#openning_time {
+		grid-area: openning_time;
+	}
+	#innhold {
+		grid-area: innhold;
+		a {
+			display: inline-block;
+			background-color: $color__background-hr;
+			color: $shade-darkest;
+			padding: 0.7em;
+			margin: 0 0.5em 0.5em 0;
+			text-decoration: none;
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: $shade-darkest;
+				color: $shade-lightest;
+			}
+			&:hover,
+			&:active {
+				outline: 0;
+			}
+		}
+
+		table {
+			border: 1px dotted $color__background-hr;
+			font-size: 75%;
+		}
+		table tr th {
+			text-align: left;
+			border: 1px dotted $color__background-hr;
+			background-color: $color__background-hr;
+		}
+		table tr td {
+			text-align: left;
+			border: 1px dotted $color__background-hr;
+			padding: 0;
+		}
+	}
+	#bestill-form {
+		grid-area: bestilling_form;
+		background-color: $color__background-hr;
+		padding: 1em;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	#slide-bilder {
+		grid-area: bilder;
+
+		#n2-ss-2-arrow-previous,
+		#n2-ss-2-arrow-next {
+			margin-bottom: -5em;
+			margin-left: 1em;
+		}
+
+		div#n2-ss-2 .n2-style-65dd15db09e3391d026b2db58e63ea50-simple {
+			width: 60%;
+			float: right;
+			span {
+				display: block;
+			}
+		}
+	}
+
+	#kontakt_link {
+		grid-area: kontakt_link;
+		background-image: url("/uinv19/uinv19gr2/wp-content/uploads/2019/05/hh-vin.jpg");
+		text-align: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		color: $shade-lightest;
+		padding: 8em 4em;
+
+		h2 {
+			margin: 0 auto 2em;
+			font-size: 2em;
+			text-shadow: 0 1px 2px $shade-darkest;
+		}
+		a {
+			display: block;
+			margin: 0 auto;
+			max-width: 250px;
+			background-color: $shade-lightest;
+			color: $shade-darkest;
+			padding: 1em;
+			text-decoration: none;
+		}
+
+		a:hover {
+			background-color: $shade-darkest;
+			color: $shade-lightest;
+		}
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#restaurant-main {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 100%;
+		#innhold {
+			display: flex;
+			flex-direction: column;
+			a {
+				text-align: center;
+			}
+		}
+		#bestill-form {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			justify-content: center;
+			margin-bottom: 1em;
+		}
+		#slide-bilder {
+			margin: 1em;
+		}
+	}
 }

@@ -32,7 +32,7 @@
 		<div class="divider-visible"></div>
 
 		<?php
-			$contact_page = get_page_by_path( 'kontakt' )->ID;
+			$contact_page = get_page_by_path( 'kontakt-oss' )->ID;
 
 			$address = get_field('hotel_address', $contact_page);
 			$lat = get_field('hotel_coordinates_lat', $contact_page);
@@ -80,7 +80,7 @@
 			</div>
 		</div>
 
-		<div class="divider-invisible"></div>
+		<p class="admin"><a href="https://itstud.hiof.no/uinv19/uinv19gr2/bjornar/funksjon/kontrollpanel/admin/hoteller/1/bookinger">Admin</a></p>
 		
 		<p class="copyright">&copy; Oppgavsrett <?= date('Y') ?> — <?= bloginfo('name') ?> AS</p>
 		<p class="credit">

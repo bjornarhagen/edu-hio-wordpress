@@ -38,7 +38,8 @@
 			echo '<ul class="roomFacilities">';
 
 			foreach($facilities as $value) {
-				echo '<li><span id="facilityChecked">&times;</span>'. $value . '</li>';
+				$icon = str_replace(' ', '-', strtolower($value));
+				echo '<li><span id="facilityChecked">' . get_icon($icon) . '</span>'. $value . '</li>';
 			}
 
 			echo '</ul>';
@@ -55,10 +56,6 @@
 				)
 			),
 			get_the_title()
-		) );
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'havnehotellet-i-halden' ),
-			'after'  => '</div>',
 		) );
 		?>
 	</div><!-- .entry-content -->
