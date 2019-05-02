@@ -333,6 +333,13 @@ if (!function_exists('havnehotellet_i_halden_setup')) :
 
 				return $svg_html;
 			}
+
+			function icon_shortcode($atts = []) {
+				$atts = array_change_key_case((array)$atts, CASE_LOWER);
+				return get_icon($atts['name']);
+			}
+
+			add_shortcode('icon', 'icon_shortcode');
 		endif;
 	}
 
