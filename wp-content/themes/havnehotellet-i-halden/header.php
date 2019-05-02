@@ -42,7 +42,16 @@
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="site-navigation">
-				<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php esc_html_e('Meny', 'havnehotellet-i-halden'); ?></button>
+				<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false">
+					<span class="menu-toggle-open">
+						<?= get_icon('menu') ?>
+						<span><?= esc_html_e('Meny', 'havnehotellet-i-halden'); ?></span>
+					</span>
+					<span class="menu-toggle-close">
+						<?= get_icon('x') ?>
+						<span><?= esc_html_e('Lukk', 'havnehotellet-i-halden'); ?></span>
+					</span>
+				</button>
 				<?php
 				wp_nav_menu(array(
 					'theme_location' => 'menu-primary',
