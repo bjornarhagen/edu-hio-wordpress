@@ -335,6 +335,27 @@ if (!function_exists('havnehotellet_i_halden_setup')) :
 			}
 		endif;
 	}
+
+	function meal_loop_shortcode() {
+		$args = array(
+			'post_type' => 'meal',
+			'post_status' => 'publish',
+		);
+		$meal_query = null;
+		$meal_query = new WP_query($args);
+		if($meal_query->have_posts()):
+			while($meal_query->have_posts()) : $meal_query->the_post();
+				$custom = get_post_custom( get_the_ID() );
+				echo "<h2>".get_the_title()."</h2>";
+				echo "<p>".get_the_content()."</p>"; 
+			endwhile;
+			wp_reset_postdata();
+		else :
+		_e( 'Sorry, no posts matched your criteria.' );
+		endif;
+	}
+	
+	add_shortcode('meal_loop', 'meal_loop_shortcode');
 endif;
 add_action('after_setup_theme', 'havnehotellet_i_halden_setup');
 
