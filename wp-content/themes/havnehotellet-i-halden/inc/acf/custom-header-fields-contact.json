@@ -1,0 +1,119 @@
+[
+	{
+		"key": "group_5ccad84daa085",
+		"title": "Adresse og kontakt info",
+		"fields": [
+			{
+				"key": "field_5ccad87cc0cd9",
+				"label": "Adresse",
+				"name": "hotel_address",
+				"type": "text",
+				"instructions": "",
+				"required": 0,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"default_value": "Mathias Bjørns gate, 1767 Halden",
+				"placeholder": "",
+				"prepend": "",
+				"append": "",
+				"maxlength": ""
+			},
+			{
+				"key": "field_5ccad89fc0cda",
+				"label": "Kordinater - lat",
+				"name": "hotel_coordinates_lat",
+				"type": "text",
+				"instructions": "",
+				"required": 0,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"default_value": "59.119258",
+				"placeholder": "11.375182",
+				"prepend": "",
+				"append": "",
+				"maxlength": ""
+			},
+			{
+				"key": "field_5ccad8cac0cdb",
+				"label": "Kordinater - lang",
+				"name": "hotel_coordinates_lon",
+				"type": "text",
+				"instructions": "",
+				"required": 0,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"default_value": "11.375182",
+				"placeholder": "",
+				"prepend": "",
+				"append": "",
+				"maxlength": ""
+			},
+			{
+				"key": "field_5ccad8edc0cdc",
+				"label": "E-post",
+				"name": "hotel_contact_email",
+				"type": "email",
+				"instructions": "",
+				"required": 0,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"default_value": "post@hhih.no",
+				"placeholder": "",
+				"prepend": "",
+				"append": ""
+			},
+			{
+				"key": "field_5ccad906c0cdd",
+				"label": "Telefon",
+				"name": "hotel_contact_phone",
+				"type": "text",
+				"instructions": "",
+				"required": 0,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"default_value": "692 2334 455",
+				"placeholder": "",
+				"prepend": "",
+				"append": "",
+				"maxlength": ""
+			}
+		],
+		"location": [
+			[
+				{
+					"param": "page_template",
+					"operator": "==",
+					"value": "template-parts/page-kontakt-oss.php"
+				}
+			]
+		],
+		"menu_order": 0,
+		"position": "normal",
+		"style": "default",
+		"label_placement": "top",
+		"instruction_placement": "label",
+		"hide_on_screen": "",
+		"active": true,
+		"description": ""
+	}
+]

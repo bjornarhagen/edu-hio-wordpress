@@ -1895,22 +1895,161 @@ body.home .page-header #booking-form .form-group-submit button:focus {
 ## Footer
 --------------------------------------------------------------*/
 
-.site-footer {
-  background-color: #000;
+#colophon {
+  padding: 1em;
   color: #fff;
+  background-color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.site-footer a {
+@media screen and (min-width: 400px) {
+  #colophon {
+    padding: 2em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #colophon {
+    padding: 2em 4em;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  #colophon {
+    padding: 4em 8em;
+  }
+}
+
+#colophon a {
   color: #fff;
   text-decoration: none;
 }
 
-.site-footer a:hover {
+#colophon a:hover {
   color: #AE9731;
 }
 
-.site-footer .page_item {
-  list-style-type: none;
+#colophon .custom-logo-link {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 800px) {
+  #colophon .custom-logo-link {
+    margin-left: 0;
+  }
+}
+
+#colophon #menu-footer-primary,
+#colophon #menu-footer-secondary {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#colophon #menu-footer-primary {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  margin-top: 2em;
+}
+
+@media screen and (min-width: 800px) {
+  #colophon #menu-footer-primary {
+    margin-top: 0;
+  }
+}
+
+#colophon #menu-footer-primary li {
+  margin-right: 1em;
+}
+
+#colophon #menu-footer-primary li:last-child {
+  margin-right: 0;
+}
+
+#colophon .divider-visible,
+#colophon .divider-invisible {
+  display: block;
+  margin: 2em auto;
+  width: 100%;
+  height: 2px;
+}
+
+#colophon .divider-visible {
+  background-color: #333333;
+}
+
+#colophon .address {
+  display: block;
+  flex-grow: 1;
+}
+
+#colophon .coordinates {
+  display: block;
+  margin-top: 0.5em;
+  color: #333333;
+}
+
+#colophon #menu-footer-secondary {
+  flex-grow: 1;
+  margin-right: auto;
+}
+
+#colophon .contact-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  #colophon .contact-info {
+    width: auto;
+    margin-top: 0;
+    margin-right: 0;
+    justify-content: flex-end;
+  }
+}
+
+#colophon .contact-info .item {
+  margin-right: 2em;
+}
+
+#colophon .contact-info .item:last-child {
+  margin-right: 0;
+}
+
+#colophon .copyright {
+  color: #333333;
+}
+
+@media screen and (min-width: 800px) {
+  #colophon .copyright {
+    margin-right: auto;
+  }
+}
+
+#colophon .credit,
+#colophon .credit a {
+  color: #333333;
+}
+
+@media screen and (min-width: 800px) {
+  #colophon .credit,
+  #colophon .credit a {
+    margin-left: auto;
+  }
 }
 
 /*--------------------------------------------------------------

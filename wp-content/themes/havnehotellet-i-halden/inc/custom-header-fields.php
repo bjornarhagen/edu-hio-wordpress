@@ -1,7 +1,11 @@
 <?php
 
 if (function_exists('acf_add_local_field_group')):
-    $acf_files = ['custom-header-fields.json', 'custom-header-fields-frontpage-extra.json'];
+    $acf_files = [
+        'custom-header-fields.json',
+        'custom-header-fields-frontpage-extra.json',
+        'custom-header-fields-contact.json'
+    ];
 
     foreach ($acf_files as $acf_file) {
         $acf_json = file_get_contents(__DIR__ . '/acf/' . $acf_file);

@@ -31,7 +31,7 @@
 				if (has_custom_logo()):
 					the_custom_logo();
 				else:
-					$logo = get_stylesheet_directory_uri() . '/images/halden_havnehotell_logo.png';
+					$logo = get_stylesheet_directory_uri() . '/images/logo.png';
 					?>
 					<a href="<?= esc_url(home_url('/')) ?>" class="custom-logo-link" rel="home" itemprop="url">
 						<img src="<?= $logo ?>" class="custom-logo" alt="<?= bloginfo('name') ?> logo" itemprop="logo">

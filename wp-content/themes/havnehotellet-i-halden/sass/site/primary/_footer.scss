@@ -1,6 +1,24 @@
-.site-footer {
-	background-color: $shade-darkest;
+#colophon {
+	padding: 1em;
 	color: $shade-lightest;
+	background-color: $shade-darkest;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+
+	@media screen and (min-width: $size__small) {
+		padding: 2em;
+	}
+
+	@media screen and (min-width: $size__medium) {
+		padding: 2em 4em;
+		justify-content: space-between;
+	}
+
+	@media screen and (min-width: $size__large) {
+		padding: 4em 8em;
+	}
 
 	a {
 		color: $shade-lightest;
@@ -11,7 +29,111 @@
 		}
 	}
 
-	.page_item {
-		list-style-type: none;
+	.custom-logo-link {
+		margin-left: auto;
+		margin-right: auto;
+
+		@media screen and (min-width: $size__medium) {
+			margin-left: 0;
+		}
+	}
+
+	#menu-footer-primary,
+	#menu-footer-secondary {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	#menu-footer-primary {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-self: center;
+		margin-top: 2em;
+
+		@media screen and (min-width: $size__medium) {
+			margin-top: 0;
+		}
+
+		li {
+			margin-right: 1em;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.divider-visible,
+	.divider-invisible {
+		display: block;
+		margin: 2em auto;
+		width: 100%;
+		height: 2px;
+	}
+
+	.divider-visible {
+		background-color: $shade-dark;
+	}
+
+	.address {
+		display: block;
+		flex-grow: 1;
+	}
+
+	.coordinates {
+		display: block;
+		margin-top: 0.5em;
+		color: $shade-dark;
+	}
+
+	#menu-footer-secondary {
+		flex-grow: 1;
+		margin-right: auto;
+	}
+
+	.contact-info {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		flex-grow: 1;
+		margin-top: 2em;
+		margin-left: auto;
+		margin-right: auto;
+		justify-content: center;
+		width: 100%;
+
+		@media screen and (min-width: $size__medium) {
+			width: auto;
+			margin-top: 0;
+			margin-right: 0;
+			justify-content: flex-end;
+		}
+
+		.item {
+			margin-right: 2em;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.copyright {
+		color: $shade-dark;
+
+		@media screen and (min-width: $size__medium) {
+			margin-right: auto;
+		}
+	}
+
+	.credit,
+	.credit a {
+		color: $shade-dark;
+
+		@media screen and (min-width: $size__medium) {
+			margin-left: auto;
+		}
 	}
 }
