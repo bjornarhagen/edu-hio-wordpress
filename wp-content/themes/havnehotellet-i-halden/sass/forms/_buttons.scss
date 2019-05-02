@@ -56,3 +56,33 @@ a.button-secondary {
 		@include hih-button-shadow($shade-dark);
 	}
 }
+
+/* Bestill bord button */
+#bestill-bord-btn {
+	background: #000;
+	color: #fff;
+	height: 50px;
+	font-size: 130%;
+	float: right;
+	width: 40%;
+  }
+  
+  #bestill-bord-btn:hover {
+	background-color: #fff;
+	color: #000;
+  }
+
+  /* Caldera form button*/
+  #fld_7908577_1 {
+	background-color: $shade-darkest;
+	color: $shade-lightest;
+	padding: 1em;
+	width: 40%;
+	float: right;
+	margin-bottom: -2em;
+  }
+  
+  #caldera_form_1 #fld_7908577_1:hover {
+	background-color: $shade-lightest;
+	color:$shade-darkest;
+  }
