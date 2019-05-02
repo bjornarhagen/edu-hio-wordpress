@@ -27,17 +27,17 @@
 
 		<header id="masthead" class="site-header">
 			<div class="site-branding">
-				<?php
-				the_custom_logo();
-				if (is_front_page() && is_home()) :
+			<?php
+				if (has_custom_logo()):
+					the_custom_logo();
+				else:
+					$logo = get_stylesheet_directory_uri() . '/images/halden_havnehotell_logo.png';
 					?>
-					<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-				<?php
-			else :
-				?>
-					<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-				<?php
-			endif;
+					<a href="<?= esc_url(home_url('/')) ?>" class="custom-logo-link" rel="home" itemprop="url">
+						<img src="<?= $logo ?>" class="custom-logo" alt="<?= bloginfo('name') ?> logo" itemprop="logo">
+					</a>
+					<?php
+				endif;
 			?>
 			</div><!-- .site-branding -->
 
