@@ -11,11 +11,67 @@
 	// Loops to enumerate the classes for gallery columns.
 	@for $i from 2 through 9 {
 		.gallery-columns-#{$i} & {
-			max-width: map-get( $columns, $i );
+			max-width: map-get($columns, $i);
 		}
 	}
 }
 
 .gallery-caption {
 	display: block;
+}
+
+.frontpage-slider-gallery {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	min-height: 300px;
+
+	.blocks-gallery-item {
+		flex-shrink: 1;
+
+		figcaption {
+			text-align: right;
+		}
+	}
+
+	.blocks-gallery-item:first-child {
+		width: 100%;
+		flex-grow: 1;
+		flex-shrink: 0;
+	}
+
+	& ~ .icon {
+		cursor: pointer;
+		font-size: 2em;
+		color: $shade-dark;
+		background-color: $shade-lightest;
+		position: relative;
+		box-shadow: 0 0.5em 1em -0.5em rgba($shade-dark, 0.33);
+		top: -1.5em;
+
+		&:last-of-type {
+			left: 1em;
+		}
+
+		@media screen and (min-width: $size__medium) {
+			&:first-of-type {
+				top: -2em;
+				left: -1em;
+			}
+
+			&:last-of-type {
+				top: -1em;
+				left: -1.55em;
+			}
+		}
+
+		&:hover {
+			color: $primary-dark;
+			background-color: $primary-light;
+			box-shadow: 0 0.5em 1em -0.5em rgba($primary-dark, 0.33);
+		}
+	}
 }

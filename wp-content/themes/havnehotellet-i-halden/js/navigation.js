@@ -150,4 +150,37 @@
 			}
 		}
 	})(masthead);
+
+	// Custom gallery on front-page
+	(function() {
+		const gallery = document.querySelector(
+			"body.home .frontpage-slider-gallery"
+		);
+
+		if (gallery == null) {
+			return;
+		}
+
+		const btnPrev = gallery.parentNode.querySelector(".icon:first-of-type");
+		const btnNext = gallery.parentNode.querySelector(".icon:last-of-type");
+
+		gallery.style.height = gallery.parentNode.clientHeight + "px";
+
+		btnNext.addEventListener("click", () => {
+			const firstItem = gallery.querySelector(
+				".blocks-gallery-item:first-child"
+			);
+
+			gallery.appendChild(firstItem);
+		});
+
+		btnPrev.addEventListener("click", () => {
+			const firstItem = gallery.querySelector(
+				".blocks-gallery-item:first-child"
+			);
+			const lastItem = gallery.querySelector(".blocks-gallery-item:last-child");
+
+			gallery.insertBefore(lastItem, firstItem);
+		});
+	})();
 })();
