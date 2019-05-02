@@ -432,7 +432,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -445,6 +445,7 @@ h4,
 h5,
 h6 {
   clear: both;
+  font-family: "Montserrat", "Open Sans", sans-serif;
 }
 
 p {
@@ -569,26 +570,6 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 
-button,
-.button {
-  color: #000;
-  background-color: #AE9731;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
-  box-shadow: 0 0.5em 1em -0.5em #CCCCCC;
-}
-
-button:hover,
-.button:hover {
-  text-decoration: underline;
-}
-
-button:visited,
-.button:visited {
-  color: #000;
-}
-
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -678,6 +659,8 @@ a.button-secondary:focus {
   box-shadow: 0 0.6em 0.6em -0.4em rgba(51, 51, 51, 0.33);
 }
 
+/* Bestill bord button */
+
 #bestill-bord-btn {
   background: #000;
   color: #fff;
@@ -688,6 +671,22 @@ a.button-secondary:focus {
 }
 
 #bestill-bord-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Caldera form button*/
+
+#fld_7908577_1 {
+  background-color: #000;
+  color: #fff;
+  padding: 1em;
+  width: 40%;
+  float: right;
+  margin-bottom: -2em;
+}
+
+#caldera_form_1 #fld_7908577_1:hover {
   background-color: #fff;
   color: #000;
 }
@@ -797,7 +796,7 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 
-.site-header {
+#masthead {
   position: fixed;
   z-index: 10;
   top: 0;
@@ -807,13 +806,30 @@ a:active {
   flex-direction: row;
   justify-content: space-between;
   height: 100px;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: 0 -1em 1em 1em rgba(75, 65, 21, 0.1);
 }
 
-#page-navigation-padding {
-  padding-top: 100px;
+@media screen and (min-width: 400px) {
+  #masthead {
+    padding: 1em 2em;
+  }
 }
 
-.site-branding {
+@media screen and (min-width: 800px) {
+  #masthead {
+    padding: 1em 4em;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  #masthead {
+    padding: 1em 8em;
+  }
+}
+
+#masthead .site-branding {
   flex-grow: 1;
   display: flex;
   flex-direction: row;
@@ -822,61 +838,193 @@ a:active {
   align-items: center;
 }
 
-.site-branding .custom-logo-link {
+#masthead .site-branding .custom-logo-link {
   width: 128px;
 }
 
-.site-navigation {
+#site-navigation {
   flex-grow: 3;
   flex-direction: row;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
 }
 
-.site-navigation .menu-hovedmeny-container {
+#site-navigation .menu-hovedmeny-container {
   flex-grow: 1;
 }
 
-.site-navigation .nav-menu {
+#site-navigation .nav-menu {
   display: none;
   flex-direction: column;
-  justify-content: flex-end;
-  background-color: white;
+  justify-content: flex-start;
+  background-color: #fff;
   padding: 0;
   list-style: none;
   margin: 0;
 }
 
-@media screen and (min-width: 37.5em) {
-  .site-navigation .nav-menu {
+@media screen and (min-width: 800px) {
+  #site-navigation .nav-menu {
     display: flex;
     flex-direction: row;
     background-color: transparent;
   }
 }
 
-.site-navigation.toggled .nav-menu {
+#site-navigation .nav-menu .page_item a {
+  padding: 1em;
+  color: #000;
+  transition: color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  text-decoration: none;
+}
+
+#site-navigation .nav-menu .page_item a:focus,
+#site-navigation .nav-menu .page_item a:hover {
+  color: #f00;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 400px) {
+  #site-navigation .nav-menu .page_item {
+    padding: 1em 2em;
+  }
+}
+
+#site-navigation.toggled::after {
+  content: " ";
+  z-index: 1;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#site-navigation.toggled .nav-menu {
+  z-index: 2;
   display: flex;
   position: absolute;
-  top: 8rem;
+  border-top: 1px solid #AE9731;
+  top: 100px;
   right: 0;
   left: 0;
   width: 100%;
 }
 
-.site-navigation .nav-menu .menu-item {
-  margin-left: 1em;
-}
-
-/* Small menu. */
-
-.menu-toggle,
-.site-navigation.toggled ul {
+#site-navigation .menu-toggle {
   display: block;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  padding-right: 0;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: #000;
 }
 
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
+@media screen and (min-width: 800px) {
+  #site-navigation .menu-toggle {
     display: none;
+  }
+}
+
+#site-navigation .menu-toggle .menu-toggle-open,
+#site-navigation .menu-toggle .menu-toggle-close {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+  #site-navigation .menu-toggle .menu-toggle-open .icon,
+  #site-navigation .menu-toggle .menu-toggle-close .icon {
+    margin: 0;
+  }
+}
+
+#site-navigation .menu-toggle .menu-toggle-open > span,
+#site-navigation .menu-toggle .menu-toggle-close > span {
+  display: none;
+}
+
+@media screen and (min-width: 400px) {
+  #site-navigation .menu-toggle .menu-toggle-open > span,
+  #site-navigation .menu-toggle .menu-toggle-close > span {
+    display: inline;
+  }
+}
+
+#site-navigation .menu-toggle .menu-toggle-open {
+  display: flex;
+}
+
+#site-navigation .menu-toggle .menu-toggle-close {
+  display: none;
+}
+
+#site-navigation.toggled .menu-toggle .menu-toggle-open {
+  display: none;
+}
+
+#site-navigation.toggled .menu-toggle .menu-toggle-close {
+  display: flex;
+}
+
+#page-navigation-padding {
+  padding-top: 100px;
+}
+
+body.home #masthead {
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+body.home #masthead.toggled::after {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.home #masthead .menu-toggle {
+  color: #fff;
+}
+
+@media screen and (min-width: 800px) {
+  body.home #masthead #site-navigation .nav-menu .page_item a {
+    color: #fff;
+  }
+
+  body.home #masthead #site-navigation .nav-menu .page_item a:hover,
+  body.home #masthead #site-navigation .nav-menu .page_item a:focus {
+    color: #f00;
+  }
+}
+
+body.home #masthead.scrolled-past-point {
+  background-color: #fff;
+  box-shadow: 0 -1em 1em 1em rgba(75, 65, 21, 0.1);
+}
+
+body.home #masthead.scrolled-past-point.toggled::after {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.home #masthead.scrolled-past-point .menu-toggle {
+  color: #000;
+}
+
+@media screen and (min-width: 800px) {
+  body.home #masthead.scrolled-past-point #site-navigation .nav-menu .page_item a {
+    color: #000;
+  }
+
+  body.home #masthead.scrolled-past-point #site-navigation .nav-menu .page_item a:hover,
+  body.home #masthead.scrolled-past-point #site-navigation .nav-menu .page_item a:focus {
+    color: #f00;
   }
 }
 
@@ -1065,124 +1213,6 @@ a:active {
 /*--------------------------------------------------------------
 ## Archive
 --------------------------------------------------------------*/
-
-.site-main {
-  padding: 0 15px;
-}
-
-.content-area {
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 1366px) {
-  .content-area {
-    max-width: 1000px;
-  }
-}
-
-.content-area .archive-content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-
-.content-area .archive-content-wrapper .archive-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 50px 0;
-}
-
-.content-area .archive-content-wrapper .archive-content .post-thumbnail img {
-  box-shadow: 10px 10px 8px -10px #333333;
-}
-
-@media screen and (min-width: 1024px) {
-  .content-area .archive-content-wrapper .archive-content {
-    justify-content: center;
-    max-width: 40%;
-  }
-}
-
-.content-area .archive-content-wrapper .entry-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 0;
-}
-
-.content-area .archive-content-wrapper .entry-header .entry-title {
-  margin: 0;
-}
-
-.content-area .archive-content-wrapper .entry-header .entry-title a {
-  text-decoration: none;
-  color: #000;
-}
-
-.content-area .archive-content-wrapper .entry-header .entry-title a:hover {
-  color: #AE9731;
-}
-
-.content-area .archive-content-wrapper .entry-header .room-price {
-  font-weight: bold;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.content-area .archive-content-wrapper .entry-content {
-  margin: 0;
-  width: 100%;
-}
-
-@media screen and (min-width: 1024px) {
-  .content-area .archive-content-wrapper article:nth-child(even) {
-    margin-top: 18em;
-  }
-}
-
-.content-area .roomFacilities {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-}
-
-.content-area .roomFacilities li {
-  list-style: none;
-}
-
-.content-area .roomFacilities #facilityChecked {
-  border: 1px solid #CCCCCC;
-  color: #AE9731;
-  padding: 1px 4px;
-  margin-right: 5px;
-}
-
-.content-area .room-btns {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.content-area .room-btns a:hover {
-  color: black;
-}
-
-.content-area .room-btns .button-secondary {
-  background-color: #000;
-  color: white;
-}
-
-.content-area .room-btns .button-secondary:hover {
-  color: #CCCCCC;
-}
 
 .site-main {
   padding: 0 15px;
@@ -1685,20 +1715,6 @@ body.home .page-header #booking-form .form-group-submit button:focus {
   padding: 1em;
 }
 
-#kontakt-oss-main #caldera #fld_7908577_1 {
-  background-color: #000;
-  color: #fff;
-  padding: 1em;
-  width: 40%;
-  float: right;
-  margin-bottom: -2em;
-}
-
-#kontakt-oss-main #caldera #caldera_form_1 #fld_7908577_1:hover {
-  background-color: #fff;
-  color: #000;
-}
-
 #kontakt-oss-main #caldera #caldera_form_1 .row {
   display: flex;
   flex-direction: column;
@@ -1822,7 +1838,7 @@ body.home .page-header #booking-form .form-group-submit button:focus {
 
 #restaurant-main #kontakt_link {
   grid-area: kontakt_link;
-  background-image: url("http://havnehotellet-i-halden.local/wp-content/uploads/2019/04/hh-vin.jpg");
+  background-image: url("/uinv19/uinv19gr2/wp-content/uploads/2019/05/hh-vin.jpg");
   text-align: center;
   background-repeat: no-repeat;
   height: 300px;
